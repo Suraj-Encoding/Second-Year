@@ -1,0 +1,9 @@
+# Useless File
+*.DS_Store
+# Assembly Object File
+*.O
+# Java Executable File
+*.class
+
+
+
