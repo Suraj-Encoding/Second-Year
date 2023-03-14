@@ -1,0 +1,11 @@
+ 1. msg = dataword -> actual data
+ 2. key & divisor = divisor / generator / CRC generator  -> divisor
+ 3. CRC Bits = Remainder
+     - CRC Generator -> n bits -> 5
+     - CRC Bits -> (n-1) bits -> 4
+     - CRC Bits = [dataword + (n-1) zeros] % CRC Generator -> Remainder
+     - CRC means CRC Bits
+ 4. data = codeword
+       - codeword = checksum = dataword + CRC -> divident
+ 5. quotient = codeword / key  -> quotient
+ 6. codeword/CRC Generator => Remainder = 0 => No Error else Error

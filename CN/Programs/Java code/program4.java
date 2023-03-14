@@ -12,16 +12,18 @@ public class program4 {
         try {
 
             // # Variables
-            String msg, key;
+            String msg, key, temp;
             int data[], divisor[], quotient[];
             boolean valid;
             int i, j;
 
             // # Input Data Stream
-            System.out.println("\n# CRC : Error Detection #\n");
-            System.out.print("Enter Data: ");
+            System.out.println("\n# CRC - Error Detection #\n");
+            System.out.println("# Sender Side:\n");
+            System.out.print(" Enter Data: ");
             msg = input.nextLine();
-            System.out.print("Enter key: ");
+            temp = msg;
+            System.out.print(" Enter key: ");
             key = input.nextLine();
 
             // # Arrays
@@ -45,8 +47,8 @@ public class program4 {
                     quotient[i] = 0;
             }
 
-            // # Display codeword
-            System.out.print("codeword: ");
+            // # Display Codeword
+            System.out.print("\n Codeword: ");
             for (i = 0; i < msg.length(); i++)
                 data[i] = Integer.parseInt(msg.charAt(i) + "");
             for (i = 0; i < data.length; i++)
@@ -54,21 +56,23 @@ public class program4 {
             System.out.println();
 
             // # Display Quotient
-            System.out.print("Quotient: ");
+            System.out.print(" Quotient: ");
             for (i = 0; i < msg.length(); i++)
                 System.out.print(quotient[i]);
             System.out.println();
 
             // # Display CRC
-            System.out.print("CRC: ");
+            System.out.print(" CRC: ");
             for (i = msg.length(); i < data.length; i++)
                 System.out.print(data[i]);
             System.out.println();
 
             // # Receiver Side
-            System.out.print("Enter codeword: ");
+            System.out.println("\n# Receiver Side:");
+            System.out.print("\n Enter Codeword: ");
             msg = input.nextLine();
             data = new int[msg.length() + key.length() - 1];
+            quotient = new int[msg.length()];
             for (i = 0; i < msg.length(); i++)
                 data[i] = Integer.parseInt(msg.charAt(i) + "");
 
@@ -83,13 +87,13 @@ public class program4 {
             }
 
             // # Display Quotient
-            System.out.print("Quotient: ");
-            for (i = 0; i < msg.length(); i++)
+            System.out.print("\n Quotient: ");
+            for (i = 0; i < quotient.length; i++)
                 System.out.print(quotient[i]);
             System.out.println();
 
             // # Display CRC
-            System.out.print("CRC: ");
+            System.out.print(" CRC: ");
             for (i = msg.length(); i < data.length; i++)
                 System.out.print(data[i]);
             System.out.println();
@@ -101,26 +105,18 @@ public class program4 {
                     valid = false;
                     break;
                 }
-            if (valid == true)
-                System.out.println("Data stream is valid");
-            else
-                System.out.println("Data stream is Invalid. CRC error occurred.");
+            if (valid == true) {
+                System.out.println(" Data stream is valid.");
+                System.out.println(" Final Data: " + temp + "\n");
+            } else
+                System.out.println(" Data stream is Invalid. CRC error occurred.\n");
         } finally {
             input.close();
         }
-
     }
 }
 
-// # Note:
-// msg = dataword -> actual data
-// key = divisor = divisor/generator
-// CRC = Remainder
-// data = codeword
-// codeword = checksum code = dataword + CRC -> divident
-// quotient = codeword / key
-
-// # Logic:
+// # Logic For Conversion:
 // divisor[i] = Integer.parseInt(key.charAt(i) + "");
 // OR
 // if (key.charAt(i) == '1')
