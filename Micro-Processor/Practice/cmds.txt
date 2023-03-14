@@ -1,0 +1,44 @@
+# Comments In Assembly Language:
+1. @ Read and write
+2. // Read and write
+3. ; Read and write
+4. # Read and write
+5. /* Read and write */
+{ @ ,  // ,  #  ,  ; ,  /* */ }
+
+
+# NASM Commands In Mac: 
+{ file_name = hello.asm }
+
+1. nano hello.asm   
+# open file in terminal 
+
+2. nasm -f macho64 hello.asm
+# nasm -> assembler   -f -> flag   MacOS and 64-bit
+# creating object file
+
+3. hexdump -C hello.o
+# hexadecimal representation
+
+4. 
+
+# Linking
+
+5. ./a.out
+# executable file 
+
+
+
+# Versions:
+1. nasm -v   ; NASM Version
+2. ld -v     ; Linker Version
+
+
+# Files:
+1. nano hello.asm     ; open file in terminal 
+2. hexdump -C hello.o ; hexadecimal representation of your code
+
+# Convertion - C/C++ To Assembly
+1. gcc -S file.cpp -o file.asm
+{ file_name = file.cpp }
+
