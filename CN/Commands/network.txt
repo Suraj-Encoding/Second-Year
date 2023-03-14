@@ -1,0 +1,14 @@
+--------------------------------
+# Computer Network Commands #
+--------------------------------
+
+# Networking commands are used: 
+        - To get system information
+        - For trouble shooting networking problems
+
+# Commands:
+
+1.ping:
+    - ping IP Address
+         OR
+    - ping site name

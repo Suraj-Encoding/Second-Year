@@ -1,0 +1,28 @@
+------------------------
+ # Run Java Commands #
+------------------------
+
+1. javac file_name
+     - Ex: javac program1.java
+     - program1.class file is created
+2. java file_name
+     - Ex: java program1
+     - getting output
+
+# Note: 
+
+     1. In Java: 
+            1.Java File: 
+                  - program.java
+                  - With extention .java
+            2.Executable Java File: 
+                  - program.class
+                  - With extention .class
+
+     2. javac - Means Java Compiler
+              - Used to convert 'Java File' to 'Executable Java File'
+
+     2. java  - It is also like Java Compiler
+              - Used to run that 'Executable Java File' 
+
+
