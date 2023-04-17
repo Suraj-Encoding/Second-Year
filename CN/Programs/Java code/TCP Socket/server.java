@@ -1,51 +1,68 @@
-// # TCP Server Side 
-import java.net.*; 
-import java.io.*; 
-public class server 
-{ 
-public static void main(String[] args) throws Exception 
-{ 
-ServerSocket sersock=new ServerSocket(4000); 
-System.out.println("Server ready for connection"); 
+// # Assignment-4 -> TCP Socket Programming
+// # Name: Suraj Dalvi - A44
+// # Implement Peer to Peer Chat using TCP Socket Programming
 
-Socket sock=sersock.accept(); 
+// # TCP Server Side
+import java.net.*;
+import java.util.Scanner;
+import java.io.*;
 
-System.out.println("Connection Is successful and waiting for chatting"); 
+public class server {
+    public static void main(String args[]) throws Exception {
 
-InputStream istream=sock.getInputStream(); 
+        // # Server Socket - Pass port only
+        ServerSocket ss = new ServerSocket(3333);
 
-BufferedReader fileRead=new BufferedReader(new InputStreamReader(istream)); 
+        // # client socket connect with server socket
+        Socket s = ss.accept();
 
-String fname=fileRead.readLine(); 
+        // # I/O Streams
+        DataInputStream din = new DataInputStream(s.getInputStream());
+        DataOutputStream dout = new DataOutputStream(s.getOutputStream());
 
-BufferedReader ContentRead=new BufferedReader(new FileReader(fname)); 
+        // # Two classes for taking input
+        // Scanner input = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-OutputStream ostream=sock.getOutputStream(); 
+        // # Actual chat logic in while loop unitl 'Bye' will not hit
+        // # Chatting is done parallel
 
-PrintWriter pwrite=new PrintWriter(ostream,true); 
+        String str = "", str2 = "";
+        System.out.println("\n----------------------------------------------------------");
+        System.out.println("\t\tServer Side ");
+        System.out.println("----------------------------------------------------------");
+        while (!str.equals("Bye")) {
+            str = din.readUTF(); // read msg from socket - come from client
+            System.out.println("  Client: " + str); // print client reply
+            System.out.print("  You: ");
+            str2 = br.readLine(); // read input from keyboard
+            dout.writeUTF(str2); // write msg on socket - pass it to server
+            dout.flush(); // clear msg from dout object
+            System.err.println();
+        }
+        System.out.println("Connection terminated...");
+        System.out.println("----------------------------------------------------------");
 
-String str; 
+        // # Passing array to client
+        // int size;
+        // System.out.println("Enter array size: ");
+        // size = br.read();
+        // dout.write(size);
+        // int a[];
+        // a = new int[size];
+        // System.out.println("Enter array: ");
+        // for (int i = 0; i < size; i++) {
+        // a[i] = input.nextInt();
+        // }
+        // System.out.println("Array send to client...");
+        // for (int i = 0; i < size; i++) {
+        // dout.write(a[i]);
+        // dout.flush();
+        // }
 
-while((str=ContentRead.readLine())!=null){ 
-
-pwrite.println(str); 
-
-} 
-sock.close(); 
-sersock.close(); 
-pwrite.close(); 
-fileRead.close(); 
-ContentRead.close(); 
-} 
+        // # At the end close all the objects of classes
+        din.close();
+        s.close();
+        ss.close();
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
