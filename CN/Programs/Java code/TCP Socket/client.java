@@ -17,32 +17,34 @@ public class client {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         // # Actual chat logic in while loop unitl 'Bye' will not hit
-        String str = "", str2 = "";
-        System.out.println("\n----------------------------------------------------------");
-        System.out.println("\t\tClient Side ");
-        System.out.println("----------------------------------------------------------");
-        while (!str.equals("Bye")) {
-            System.out.print("  You: ");
-            str = br.readLine(); // read input from keyboard
-            dout.writeUTF(str); // write msg on socket - pass it to server
-            dout.flush(); // clear msg from dout object
-            str2 = din.readUTF(); // read msg from socket - come from server
-            System.out.println("  Server: " + str2); // print server reply
-            System.err.println();
-        }
-        System.out.println("Connection terminated...");
-        System.out.println("----------------------------------------------------------");
+        // String str = "", str2 = "";
+        // System.out.println("\n----------------------------------------------------------");
+        // System.out.println("\t\tClient Side ");
+        // System.out.println("----------------------------------------------------------");
+        // while (!str.equals("Bye")) {
+        // System.out.print(" You: ");
+        // str = br.readLine(); // read input from keyboard
+        // dout.writeUTF(str); // write msg on socket - pass it to server
+        // dout.flush(); // clear msg from dout object
+        // str2 = din.readUTF(); // read msg from socket - come from server
+        // System.out.println(" Server: " + str2); // print server reply
+        // System.err.println();
+        // }
+        // System.out.println("Connection terminated...");
+        // System.out.println("----------------------------------------------------------");
 
         // # Receiving array from server
-        // int b[];
-        // int size = din.read();
-        // b = new int[size];
-        // System.out.println("Array from server: ");
-        // for (int i = 0; i < 5; i++) {
-        // b[i] = din.read();
-        // System.out.print(b[i] + " ");
-        // }
-        // System.out.println();
+        int b[];
+        int size = din.read();
+        b = new int[size];
+        System.out.print("Array from server: ");
+        for (int i = 0; i < size; i++) {
+            b[i] = din.read();
+        }
+        for (int i = 0; i < size; i++) {
+            System.out.print(b[i] + " ");
+        }
+        System.out.println();
 
         // # At the end close all the objects of classes
         dout.close();
