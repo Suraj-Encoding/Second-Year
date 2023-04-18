@@ -94,7 +94,7 @@ Exit
 disp64_proc:
 mov rbx,16
 mov rcx,2
-mov rsi,char_ans
+mov rsi,char_ans + 1
 
 cnt:
 mov rdx,0
