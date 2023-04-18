@@ -6,8 +6,8 @@
 *.class
 
 # Unwanted Folders
-/Dry Run
+/Run
 /Files
-/SY Presentation
+/Presentation
 
 
