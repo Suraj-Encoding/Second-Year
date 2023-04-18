@@ -5,5 +5,9 @@
 # Java Executable File
 *.class
 
+# Unwanted Folders
+/Dry Run
+/Files
+/SY Presentation
 
 
