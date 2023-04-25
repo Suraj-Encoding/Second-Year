@@ -1,0 +1,18 @@
+Q1
+select add_dets.add1,add_dets.add2,add_dets.state,add_dets.city,add_dets.pincode from add_dets
+inner join cust_mstr on cust_mstr.cust_no = add_dets.code_no where cust_mstr.fname = 'xyz' and 
+cust_mstr.lname = 'pqr';
+Q2
+select cust_mstr.fname,cust_mstr.lname from cust_mstr join acc_fd_cust_dets on
+cust_mstr.cust_no = acc_fd_cust_dets.codeno join fd_dets on acc_fd_cust_dets.acc_fd_no = fd_dets.fd_sr_no where fd_dets.amt > 5000;
+Q3
+select emp_mstr.f_name,emp_mstr.l_name,emp_mstr.m_name,emp_mstr.desg,branch_mstr.name from emp_mstr
+inner join branch_mstr on branch_mstr.b_no = emp_mstr.branch_no;
+Q4
+select emp_mstr.f_name,emp_mstr.l_name,emp_mstr.m_name,emp_mstr.dept,emp_mstr.desg,cntc_dets.cntc_type,
+cntc_dets.cntc_data from emp_mstr left join cntc_dets on emp_mstr.emp_no = cntc_dets.code_no;
+
+select emp_mstr.f_name,emp_mstr.l_name,emp_mstr.m_name,emp_mstr.dept,emp_mstr.desg,cntc_dets.cntc_type,
+cntc_dets.cntc_data from emp_mstr right join cntc_dets on emp_mstr.emp_no = cntc_dets.code_no;
+
+

@@ -1,0 +1,32 @@
+Q1
+select branch_name from loan;
+Q2
+select loan_no from Loan where branch_name = 'akurdi' and amount > 12000;
+Q3
+select borrower.cust_name,borrower.loan_no,Loan.amount from Borrower inner join Loan on Borrower.loan_no = Loan.loan_no;
+Q4
+select borrower.cust_name from borrower inner join loan on loan.loan_no = borrower.loan_no where loan.branch_name = 'akurdi' order by cust_name;
+Q5
+select cust_name from depositor union select cust_name from borrower;
+Q6
+select cust_name from depositor intersect select cust_name from borrower;
+Q7
+select cust_name from depositor minus select cust_name from borrower;
+Q8
+select avg(balance) from account where branch_name = 'Akurdi';
+Q9
+select branch_name,avg(balance) from account group by branch_name;
+Q10
+select branch_name,count(*) from account group by branch_name;
+Q11
+select branch_name from account group by branch_name having avg(balance) > 12000;
+Q12
+select count(*) from customer;
+Q13
+select sum(amount) from loan;
+Q14
+delete from loan where amount between 1300 and 1500;
+Q15
+delete from branch where branch_city = 'Nigdi';
+Q16
+create synonym cust for customer;
