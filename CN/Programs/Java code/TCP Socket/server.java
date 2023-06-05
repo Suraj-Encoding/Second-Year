@@ -11,7 +11,7 @@ public class server {
     public static void main(String args[]) throws Exception {
 
         // # Server Socket - Pass port only
-        ServerSocket ss = new ServerSocket(3333);
+        ServerSocket ss = new ServerSocket(4400);
 
         // # client socket connect with server socket
         Socket s = ss.accept();
@@ -36,31 +36,19 @@ public class server {
         System.out.println(" Client: " + str); // print client reply
         System.out.print(" You: ");
         str2 = br.readLine(); // read input from keyboard
-        dout.writeUTF(str2); // write msg on socket - pass it to server
+        dout.writeUTF(str2); // write msg on socket - pass it to client
         dout.flush(); // clear msg from dout object
-        System.err.println();
+        System.out.println();
         }
         System.out.println("Connection terminated...");
         System.out.println("----------------------------------------------------------");
 
-        // # Passing array to client
-        // int size;
-        // System.out.print("\nEnter array size: ");
-        // size = br.read();
-        // dout.write(size);
-        // int a[];
-        // a = new int[size];
-        // System.out.print("Enter array: ");
-        // for (int i = 0; i < size; i++) {
-        //     a[i] = input.nextInt();
-        //     dout.write(a[i]);
-        //     dout.flush();
-        // }
-        // System.out.println("Array send to client...");
-
         // # At the end close all the objects of classes
         din.close();
+        dout.close();
         s.close();
         ss.close();
+        br.close();
+        input.close();
     }
 }

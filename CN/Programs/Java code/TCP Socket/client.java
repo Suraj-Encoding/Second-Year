@@ -7,7 +7,7 @@ public class client {
     public static void main(String args[]) throws Exception {
 
         // # Client Socket - localhost means this machine IP address
-        Socket s = new Socket("localhost", 3333);
+        Socket s = new Socket("localhost", 4400);
 
         // # I/O streams for socket => Read by din and write by dout
         DataInputStream din = new DataInputStream(s.getInputStream());
@@ -33,21 +33,10 @@ public class client {
         System.out.println("Connection terminated...");
         System.out.println("----------------------------------------------------------");
 
-        // # Receiving array from server
-        // int b[];
-        // int size = din.read();
-        // b = new int[size];
-        // System.out.print("Array from server: ");
-        // for (int i = 0; i < size; i++) {
-        // b[i] = din.read();
-        // }
-        // for (int i = 0; i < size; i++) {
-        // System.out.print(b[i] + " ");
-        // }
-        // System.out.println();
-
         // # At the end close all the objects of classes
         dout.close();
+        din.close();
         s.close();
+        br.close();
     }
 }
