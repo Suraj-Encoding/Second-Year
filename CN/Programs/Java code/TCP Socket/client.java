@@ -21,14 +21,14 @@ public class client {
         System.out.println("\n----------------------------------------------------------");
         System.out.println("\t\tClient Side ");
         System.out.println("----------------------------------------------------------");
-        while (!str.equals("Bye")) {
+        while (!str2.equals("Bye")) {
             System.out.print(" You: ");
             str = br.readLine(); // read input from keyboard
             dout.writeUTF(str); // write msg on socket - pass it to server
             dout.flush(); // clear msg from dout object
             str2 = din.readUTF(); // read msg from socket - come from server
             System.out.println(" Server: " + str2); // print server reply
-            System.err.println();
+            System.out.println();
         }
         System.out.println("Connection terminated...");
         System.out.println("----------------------------------------------------------");
