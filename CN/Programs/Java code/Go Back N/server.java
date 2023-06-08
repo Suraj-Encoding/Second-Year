@@ -6,7 +6,7 @@
 import java.io.*;
 import java.net.*;
 
-class server {
+public class server {
     public static void main(String args[]) throws IOException {
         System.out.println("\n.......Server Side.......\n");
         System.out.println("Waiting for connection....");
@@ -37,7 +37,6 @@ class server {
                     Thread.sleep(7000);
                 } catch (Exception e) {
                 }
-
                 int a = in.read();
                 System.out.println("Received acknowledgement for frame " + i + " as " + a);
             }

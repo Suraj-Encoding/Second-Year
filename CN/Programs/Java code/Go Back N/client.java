@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-class client {
+public class client {
     public static void main(String args[]) throws IOException {
         InetAddress IP = InetAddress.getByName("Localhost");
         Socket connection = new Socket(IP, 1500);

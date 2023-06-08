@@ -67,10 +67,10 @@ public class CRC {
         System.out.println();
 
         // # Receiver Side
-        System.out.println("\n# Receiver Side:");
+        System.out.println("\n# Receiver Side: ");
         System.out.print("\n Enter Codeword: ");
         msg = input.nextLine();
-        data = new int[msg.length() + key.length() - 1];
+        data = new int[msg.length()];
         quotient = new int[msg.length()];
         for (i = 0; i < msg.length(); i++)
             data[i] = Integer.parseInt(msg.charAt(i) + "");
@@ -93,7 +93,7 @@ public class CRC {
 
         // # Display CRC
         System.out.print(" CRC: ");
-        for (i = msg.length(); i < data.length; i++)
+        for (i = temp.length(); i < data.length; i++)
             System.out.print(data[i]);
         System.out.println();
 
