@@ -1,0 +1,3295 @@
+<!DOCTYPE html>
+<html lang="" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="https://chat.openai.com/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bardapurkar pdf ans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll()
+    </script>
+
+    <style>
+        :root {
+            --tw-prose-code: #111827;
+            --tw-prose-hr: #e5e7eb;
+            --tw-prose-links: #111827;
+            --tw-prose-headings: #111827;
+            --tw-prose-quotes: #111827;
+            --tw-prose-counters: #6b7280;
+            --page-bg: #f7f7f8;
+            --page-text: #374151;
+            --conversation-odd-bg: rgba(247,247,248);
+            --th-boarders: #4b5563;
+            --td-boarders: #374151;
+            --meta-title: #616c77;
+        }
+
+        [data-theme="dark"] {
+            --tw-prose-code: #f9fafb;
+            --tw-prose-hr: #374151;
+            --tw-prose-links: #fff;
+            --tw-prose-headings: #fff;
+            --tw-prose-quotes: #f3f4f6;
+            --tw-prose-counters: #9ca3af;
+            --page-bg: rgba(52,53,65);
+            --page-text: #fff;
+            --conversation-odd-bg: rgb(68,70,84);
+            --meta-title: #959faa;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        ::-webkit-scrollbar {
+            height: 1rem;
+            width: .5rem
+        }
+
+        ::-webkit-scrollbar:horizontal {
+            height: .5rem;
+            width: 1rem
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+            border-radius: 9999px
+        }
+
+        ::-webkit-scrollbar-thumb {
+            --tw-border-opacity: 1;
+            background-color: rgba(217,217,227,.8);
+            border-color: rgba(255,255,255,var(--tw-border-opacity));
+            border-radius: 9999px;
+            border-width: 1px
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgba(236,236,241,var(--tw-bg-opacity))
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            --tw-bg-opacity: 1;
+            background-color: rgba(86,88,105,var(--tw-bg-opacity))
+        }
+
+        .dark ::-webkit-scrollbar-thumb:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgba(172,172,190,var(--tw-bg-opacity))
+        }
+
+        @media (min-width: 768px) {
+            .scrollbar-trigger ::-webkit-scrollbar-thumb {
+                visibility:hidden
+            }
+
+            .scrollbar-trigger:hover ::-webkit-scrollbar-thumb {
+                visibility: visible
+            }
+        }
+
+        body {
+            font-family: Söhne,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--page-text);
+            background-color: var(--page-bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        [data-theme="light"] .sun {
+            display: none;
+        }
+
+        [data-theme="dark"] .moon {
+            display: none;
+        }
+
+        .toggle {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+        }
+
+        .metadata_container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 8px;
+            padding-left: 1rem;
+        }
+
+        .metadata_item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border-radius: 16px;
+            padding: 4px 0.5rem;
+        }
+
+        .metadata_item:hover {
+            background-color: rgba(0,0,0,.1);
+        }
+
+        .metadata_item > div:first-child {
+            flex: 0 1 100px;
+            color: var(--meta-title);
+        }
+
+        .metadata_item > div:last-child {
+            flex: 1;
+        }
+
+        a {
+            color: var(--tw-prose-links);
+            font-size: 0.8rem;
+            text-decoration-line: underline;
+            text-underline-offset: 2px;
+        }
+
+        .conversation-content > p:first-child,
+        ol:first-child {
+            margin-top: 0;
+        }
+
+        p>code, li>code {
+            color: var(--tw-prose-code);
+            font-weight: 600;
+            font-size: .875em;
+        }
+
+        p>code::before,
+        p>code::after,
+        li>code::before,
+        li>code::after {
+            content: "`";
+        }
+
+        hr {
+            width: 100%;
+            height: 0;
+            border: 1px solid var(--tw-prose-hr);
+            margin-bottom: 1em;
+            margin-top: 1em;
+        }
+
+        pre {
+            color: #ffffff;
+            background-color: #000000;
+            overflow-x: auto;
+            margin: 0 0 1rem 0;
+            border-radius: 0.375rem;
+        }
+
+        pre>code {
+            font-family: Söhne Mono, Monaco, Andale Mono, Ubuntu Mono, monospace !important;
+            font-weight: 400;
+            font-size: .875em;
+            line-height: 1.7142857;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--tw-prose-headings);
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2.25em;
+            font-weight: 600;
+            line-height: 1.1111111;
+            margin-bottom: 0.8888889em;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: 700;
+            line-height: 1.3333333;
+            margin-bottom: 1em;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 1.25em;
+            font-weight: 600;
+            line-height: 1.6;
+            margin-bottom: .6em;
+            margin-top: 1.6em;
+        }
+
+        h4 {
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: .5em;
+            margin-top: 1.5em
+        }
+
+        h3,h4 {
+            margin-bottom: .5rem;
+            margin-top: 1rem;
+        }
+
+        h5 {
+            font-weight: 600;
+        }
+
+        blockquote {
+            border-left: 2px solid rgba(142,142,160,1);
+            color: var(--tw-prose-quotes);
+            font-style: italic;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1rem;
+            margin: 1.6em 0;
+            padding-left: 1em;
+            quotes: "\201C""\201D""\2018""\2019";
+        }
+
+        blockquote p:first-of-type:before {
+            content: open-quote;
+        }
+
+        blockquote p:last-of-type:after {
+            content: close-quote;
+        }
+
+        ol, ul {
+            padding-left: 1.1rem;
+        }
+
+        ::marker {
+            color: var(--tw-prose-counters);
+            font-weight: 400;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 0;
+            table-layout: auto;
+            text-align: left;
+            font-size: .875em;
+            line-height: 1.7142857;
+        }
+
+        table * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #d9d9e3;
+        }
+
+        table thead {
+            border-bottom-color: var(--th-boarders);
+            border-bottom-width: 1px;
+        }
+
+        table th {
+            background-color: rgba(236,236,241,.2);
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-top-width: 1px;
+            padding: 0.25rem 0.75rem;
+        }
+
+        table th:first-child {
+            border-top-left-radius: 0.375rem;
+        }
+
+        table th:last-child {
+            border-right-width: 1px;
+            border-top-right-radius: 0.375rem;
+        }
+
+        table tbody tr {
+            border-bottom-color: var(--td-boarders);
+            border-bottom-width: 1px;
+        }
+
+        table tbody tr:last-child {
+            border-bottom-width: 0;
+        }
+
+        table tbody tr:last-child td:first-child {
+            border-bottom-left-radius: 0.375rem;
+        }
+
+        table tbody tr:last-child td:last-child {
+            border-bottom-right-radius: 0.375rem;
+        }
+
+        table td {
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            padding: 0.25rem 0.75rem;
+        }
+
+        table td:last-child {
+            border-right-width: 1px;
+        }
+
+        [type=checkbox], [type=radio] {
+            accent-color: #2563eb;
+        }
+
+        .conversation {
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 1rem;
+        }
+
+        .conversation-header {
+            margin-bottom: 1rem;
+        }
+
+        .conversation-header h1 {
+            margin: 0;
+        }
+
+        .conversation-header h1 a {
+            font-size: 1.5rem;
+        }
+
+        .conversation-header .conversation-export {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .conversation-header p {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .conversation-item {
+            display: flex;
+            position: relative;
+            padding: 1rem;
+            border-left: 1px solid rgba(0,0,0,.1);
+            border-right: 1px solid rgba(0,0,0,.1);
+            border-bottom: 1px solid rgba(0,0,0,.1);
+        }
+
+        .conversation-item:first-of-type {
+            border-top: 1px solid rgba(0,0,0,.1);
+        }
+
+        .conversation-item:nth-child(odd) {
+            background-color: var(--conversation-odd-bg);
+        }
+
+        .author {
+            display: flex;
+            flex: 0 0 30px;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 0.125rem;
+            margin-right: 1rem;
+            overflow: hidden;
+        }
+
+        .author svg {
+            color: #fff;
+            width: 22px;
+            height: 22px;
+        }
+
+        .author img {
+            content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABPNJREFUWEftl11sFFUUx393vvar7la6VFpKCKAkokRLQCxUpPJgIsEHhRBj8MEnY2LUmPhgjG8aPxPEuCAKCQ+gxIhRYwyl0pjIg5EEIxgSWhMDFGst0EJ3u7szc8fcmW47s91uUYkmxpNM7u6d+/G/5/zv/5wRN/Xs8QA0IVQzYRIhNDwcpPTwcBGh95qnTf73PH961Dwt8l+Gl64aKv4H8K97oLn7Az+IQotywOeEkD4HVFsx1S+qYjwbB7x6HGg+sjsAECHhBCmvE4DpLJ3qETf1vF/jFihEwamvhwdmAfBeACASgmCKcornSVwplUsQHugINA+qr5bqA21af83NQyEULUeDEFSb0gGhNncdbNsm1pDCtW3iUmBqBnm3jG6ZuI6DZZhQsrHLZWzTJJaIU86PYxmGD3yaDkQB7JoRgOe62MUShVIRMxknFU+SNuP+wmd/vUC2eS6l8XEarASG7WIYJkUhMawYTrGEIyVF18aN6hKEAbT21vaAHwIPDE3jan6MG+dmOT9wnpin0Zhp9EMjpIcou3j5EglP8z0kTZ1i2cGKx/AMDRri2PrMSilajkY9oFxfMQUA28EUGlcvjbD1oc2kjRiffv4ZIpPEM3RMW7KlaxMpnwFKtlWbYBzJqd/7OfbD8T8HIIxVl+AUiszVkxiX87zy6DM0AV/1nWDPiV5kUwrLhfvv6iQrLdrSc2gzmug99yPlbAN9wxc4eeb0LBzoCW7B5KkjSUfi2S7pgmTrbWtY2bqEsaGLJBe38uzBHPr8OZTGCsgr46TyDhtWdbB2+d28umcHl9MGhZgg1pCczvAICesA8IQkkUhS7htg77bnGDr9M9/2n2LTps28e/wL+i8NYhoGru0gx8bpWLGKrkUdvP7hDrR5jeSFS0k6fx0ASCyhc0djKy+2P8Dhw90cGzjDI48/wVkusnv/PpLNc3wVHR0aZn3HWroWdfLGR29jtTQxXBxDM6sZGMUj5nVXkTAkSJYrkYMjPLVlG0usDLm3tlPWYcODG1l+SzvP73sN0ZxBMw200QKrl7ezbuk97Di0i2I6Rl44swqTmNcdvYZ+TpiQ4VQZxJlBdj79EjYwTB4HlzgWrcQ51PcdB77vpWXhQkb7z7Gho5OOpWvY/kkuAICDpleLQJUHWo4EuSBiEwAai/DYrZ2sXryM/T99Q6nBIplI4AyNcN+CZWQyWZ488CbphW2M/DJA1+o1rLx5FdsP5nBuiFHAIR6P10sFiJoAVBISEgXghY3buDJ6kZc/3oudifsLapcLPHx7B+tW3Evu5JecHjiHdrXI+rWd3NnazjuHcrgpiyIS0zSom45be4J6oNrUJENKkjYIJI6G/ygzZPCoMUVDUVXDlKB0I5vNcv63QTxLDyS4RpKLXPu2GgBUIvZRC+nLsbIg201ZOMGod2qckmZVpPrvNIGnHvW7TgEjFny9N7K00vhK/aMRAFCLlHQmk4o6acwNNlXvKmDcUIWsTwjarADaemZORuq8YQDOxJVWAJQEq7YCwG/VYT3P14UI9+t5YDYAFaereE5VhqBXhaRCtCnvheJVD8D8IztDS019cNQi5mTcKwuGilU1fpLtsxWtIf+IKABVhs0snf8QAJ/CNcXj+gCIri1aunORaAbfiKGiJJSe/z6A6Qe7RgDBxDAJZxKv2rpbtXGkHrgmD/yHAfwBSSJKWnirMXoAAAAASUVORK5CYII=);
+            width: 100%;
+            height: 100%;
+        }
+
+        .author.GPT-3 {
+            background-color: rgb(16, 163, 127);
+        }
+
+        .author.GPT-4 {
+            background-color: black;
+        }
+
+        .conversation-content-wrapper {
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            flex: 1 1 auto;
+            flex-direction: column;
+        }
+
+        .conversation-content {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .conversation-content p {
+            white-space: pre-wrap;
+            line-height: 28px;
+        }
+
+        .conversation-content img, .conversation-content video {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 2em;
+            margin-top: 2em;
+        }
+
+        .time {
+            position: absolute;
+            right: 8px;
+            bottom: 0;
+            font-size: 0.8rem;
+            color: #acacbe
+        }
+    </style>
+</head>
+
+<body>
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <symbol id="chatgpt" viewBox="0 0 41 41">
+            <path d="M37.5324 16.8707C37.9808 15.5241 38.1363 14.0974 37.9886 12.6859C37.8409 11.2744 37.3934 9.91076 36.676 8.68622C35.6126 6.83404 33.9882 5.3676 32.0373 4.4985C30.0864 3.62941 27.9098 3.40259 25.8215 3.85078C24.8796 2.7893 23.7219 1.94125 22.4257 1.36341C21.1295 0.785575 19.7249 0.491269 18.3058 0.500197C16.1708 0.495044 14.0893 1.16803 12.3614 2.42214C10.6335 3.67624 9.34853 5.44666 8.6917 7.47815C7.30085 7.76286 5.98686 8.3414 4.8377 9.17505C3.68854 10.0087 2.73073 11.0782 2.02839 12.312C0.956464 14.1591 0.498905 16.2988 0.721698 18.4228C0.944492 20.5467 1.83612 22.5449 3.268 24.1293C2.81966 25.4759 2.66413 26.9026 2.81182 28.3141C2.95951 29.7256 3.40701 31.0892 4.12437 32.3138C5.18791 34.1659 6.8123 35.6322 8.76321 36.5013C10.7141 37.3704 12.8907 37.5973 14.9789 37.1492C15.9208 38.2107 17.0786 39.0587 18.3747 39.6366C19.6709 40.2144 21.0755 40.5087 22.4946 40.4998C24.6307 40.5054 26.7133 39.8321 28.4418 38.5772C30.1704 37.3223 31.4556 35.5506 32.1119 33.5179C33.5027 33.2332 34.8167 32.6547 35.9659 31.821C37.115 30.9874 38.0728 29.9178 38.7752 28.684C39.8458 26.8371 40.3023 24.6979 40.0789 22.5748C39.8556 20.4517 38.9639 18.4544 37.5324 16.8707ZM22.4978 37.8849C20.7443 37.8874 19.0459 37.2733 17.6994 36.1501C17.7601 36.117 17.8666 36.0586 17.936 36.0161L25.9004 31.4156C26.1003 31.3019 26.2663 31.137 26.3813 30.9378C26.4964 30.7386 26.5563 30.5124 26.5549 30.2825V19.0542L29.9213 20.998C29.9389 21.0068 29.9541 21.0198 29.9656 21.0359C29.977 21.052 29.9842 21.0707 29.9867 21.0902V30.3889C29.9842 32.375 29.1946 34.2791 27.7909 35.6841C26.3872 37.0892 24.4838 37.8806 22.4978 37.8849ZM6.39227 31.0064C5.51397 29.4888 5.19742 27.7107 5.49804 25.9832C5.55718 26.0187 5.66048 26.0818 5.73461 26.1244L13.699 30.7248C13.8975 30.8408 14.1233 30.902 14.3532 30.902C14.583 30.902 14.8088 30.8408 15.0073 30.7248L24.731 25.1103V28.9979C24.7321 29.0177 24.7283 29.0376 24.7199 29.0556C24.7115 29.0736 24.6988 29.0893 24.6829 29.1012L16.6317 33.7497C14.9096 34.7416 12.8643 35.0097 10.9447 34.4954C9.02506 33.9811 7.38785 32.7263 6.39227 31.0064ZM4.29707 13.6194C5.17156 12.0998 6.55279 10.9364 8.19885 10.3327C8.19885 10.4013 8.19491 10.5228 8.19491 10.6071V19.808C8.19351 20.0378 8.25334 20.2638 8.36823 20.4629C8.48312 20.6619 8.64893 20.8267 8.84863 20.9404L18.5723 26.5542L15.206 28.4979C15.1894 28.5089 15.1703 28.5155 15.1505 28.5173C15.1307 28.5191 15.1107 28.516 15.0924 28.5082L7.04046 23.8557C5.32135 22.8601 4.06716 21.2235 3.55289 19.3046C3.03862 17.3858 3.30624 15.3413 4.29707 13.6194ZM31.955 20.0556L22.2312 14.4411L25.5976 12.4981C25.6142 12.4872 25.6333 12.4805 25.6531 12.4787C25.6729 12.4769 25.6928 12.4801 25.7111 12.4879L33.7631 17.1364C34.9967 17.849 36.0017 18.8982 36.6606 20.1613C37.3194 21.4244 37.6047 22.849 37.4832 24.2684C37.3617 25.6878 36.8382 27.0432 35.9743 28.1759C35.1103 29.3086 33.9415 30.1717 32.6047 30.6641C32.6047 30.5947 32.6047 30.4733 32.6047 30.3889V21.188C32.6066 20.9586 32.5474 20.7328 32.4332 20.5338C32.319 20.3348 32.154 20.1698 31.955 20.0556ZM35.3055 15.0128C35.2464 14.9765 35.1431 14.9142 35.069 14.8717L27.1045 10.2712C26.906 10.1554 26.6803 10.0943 26.4504 10.0943C26.2206 10.0943 25.9948 10.1554 25.7963 10.2712L16.0726 15.8858V11.9982C16.0715 11.9783 16.0753 11.9585 16.0837 11.9405C16.0921 11.9225 16.1048 11.9068 16.1207 11.8949L24.1719 7.25025C25.4053 6.53903 26.8158 6.19376 28.2383 6.25482C29.6608 6.31589 31.0364 6.78077 32.2044 7.59508C33.3723 8.40939 34.2842 9.53945 34.8334 10.8531C35.3826 12.1667 35.5464 13.6095 35.3055 15.0128ZM14.2424 21.9419L10.8752 19.9981C10.8576 19.9893 10.8423 19.9763 10.8309 19.9602C10.8195 19.9441 10.8122 19.9254 10.8098 19.9058V10.6071C10.8107 9.18295 11.2173 7.78848 11.9819 6.58696C12.7466 5.38544 13.8377 4.42659 15.1275 3.82264C16.4173 3.21869 17.8524 2.99464 19.2649 3.1767C20.6775 3.35876 22.0089 3.93941 23.1034 4.85067C23.0427 4.88379 22.937 4.94215 22.8668 4.98473L14.9024 9.58517C14.7025 9.69878 14.5366 9.86356 14.4215 10.0626C14.3065 10.2616 14.2466 10.4877 14.2479 10.7175L14.2424 21.9419ZM16.071 17.9991L20.4018 15.4978L24.7325 17.9975V22.9985L20.4018 25.4983L16.071 22.9985V17.9991Z" fill="currentColor"></path>
+        </symbol>
+    </svg>
+    <div class="conversation">
+        <div class="conversation-header">
+            <h1>
+                <a href="https://chat.openai.com/c/098795ce-d467-4a62-9439-759eacd1a074" target="_blank" rel="noopener noreferrer">Bardapurkar pdf ans</a>
+                <button class="toggle">
+                    <svg class="sun" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </h1>
+            <div class="conversation-export">
+                <p>Exported by
+                <a href="https://github.com/pionxzh/chatgpt-exporter">ChatGPT Exporter</a>
+                at 2023-06-08T17:52:19.580Z</p>
+            </div>
+            
+        </div>
+
+        
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>I will now provide you with set of questions and you will provide the answers in SQL plus only, do you understand?</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Yes, I understand. Please go ahead and provide the questions, and I'll do my best to provide the answers using SQL.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>it should support SQL plus</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>I apologize for the confusion. SQL<em>Plus is an interactive command-line interface for Oracle Database, and as an AI language model, I don't have direct access to a specific environment like SQL</em>Plus. However, I can still help you with SQL queries that can be executed in any SQL environment, including SQL*Plus. Please provide your questions, and I'll assist you with the SQL queries.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 1. Consider following Bank database schema and solve given queries:
+Account(Acc_no, branch_name,balance)
+branch(branch_name,branch_city, assets)
+customer(cust_name,cust_street,cust_city)
+Depositor(cust_name,acc_no)
+Loan(loan_no,branch_name,amount)
+Borrower(cust_name,loan_no)
+Q.1 Create above tables with appropriate constraints like primary key, foreign key, not null etc. with suitable data
+Q.2. Create synonym for customer table as cust.
+Q.3 Add customer phone number in Customer table.
+Q.4 Delete phone number attribute from Customer table.
+Q.5. Find the names of all branches in loan relation.
+Q.6. Find all customers who have a loan from bank. Find their names,loan_no and loan amount.
+Q.7. List all customers in alphabetical order who have loan from Akurdi branch.
+Q.8. Find all customers who have an account or loan or both at bank.
+Q.9. Find average account balance at Akurdi branch.
+Q.10. Find no. of depositors at each branch.
+Q.11. Delete all tuples at every branch located in Nigdi.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Sure! Here are the SQL queries to solve the given problem:</p>
+<p>Q.1 Create above tables with appropriate constraints like primary key, foreign key, not null, etc. with suitable data.</p>
+<pre><code class="language-sql">-- Create the Account table
+CREATE TABLE Account (
+  Acc_no INT PRIMARY KEY,
+  branch_name VARCHAR(50),
+  balance DECIMAL(10, 2),
+  FOREIGN KEY (branch_name) REFERENCES branch(branch_name)
+);
+
+-- Create the branch table
+CREATE TABLE branch (
+  branch_name VARCHAR(50) PRIMARY KEY,
+  branch_city VARCHAR(50),
+  assets DECIMAL(10, 2)
+);
+
+-- Create the customer table
+CREATE TABLE customer (
+  cust_name VARCHAR(50),
+  cust_street VARCHAR(50),
+  cust_city VARCHAR(50),
+  PRIMARY KEY (cust_name)
+);
+
+-- Create the Depositor table
+CREATE TABLE Depositor (
+  cust_name VARCHAR(50),
+  acc_no INT,
+  FOREIGN KEY (cust_name) REFERENCES customer(cust_name),
+  FOREIGN KEY (acc_no) REFERENCES Account(Acc_no)
+);
+
+-- Create the Loan table
+CREATE TABLE Loan (
+  loan_no INT PRIMARY KEY,
+  branch_name VARCHAR(50),
+  amount DECIMAL(10, 2),
+  FOREIGN KEY (branch_name) REFERENCES branch(branch_name)
+);
+
+-- Create the Borrower table
+CREATE TABLE Borrower (
+  cust_name VARCHAR(50),
+  loan_no INT,
+  FOREIGN KEY (cust_name) REFERENCES customer(cust_name),
+  FOREIGN KEY (loan_no) REFERENCES Loan(loan_no)
+);
+</code></pre>
+<p>Q.2 Create a synonym for the customer table as cust.</p>
+<pre><code class="language-sql">CREATE SYNONYM cust FOR customer;
+</code></pre>
+<p>Q.3 Add the customer phone number column in the Customer table.</p>
+<pre><code class="language-sql">ALTER TABLE customer ADD phone_number VARCHAR(20);
+</code></pre>
+<p>Q.4 Delete the phone number attribute from the Customer table.</p>
+<pre><code class="language-sql">ALTER TABLE customer DROP COLUMN phone_number;
+</code></pre>
+<p>Q.5 Find the names of all branches in the loan relation.</p>
+<pre><code class="language-sql">SELECT DISTINCT branch_name
+FROM Loan;
+</code></pre>
+<p>Q.6 Find all customers who have a loan from the bank. Find their names, loan_no, and loan amount.</p>
+<pre><code class="language-sql">SELECT c.cust_name, l.loan_no, l.amount
+FROM customer c
+JOIN Borrower b ON c.cust_name = b.cust_name
+JOIN Loan l ON b.loan_no = l.loan_no;
+</code></pre>
+<p>Q.7 List all customers in alphabetical order who have a loan from the Akurdi branch.</p>
+<pre><code class="language-sql">SELECT c.cust_name
+FROM customer c
+JOIN Borrower b ON c.cust_name = b.cust_name
+JOIN Loan l ON b.loan_no = l.loan_no
+WHERE l.branch_name = 'Akurdi'
+ORDER BY c.cust_name;
+</code></pre>
+<p>Q.8 Find all customers who have an account or loan or both at the bank.</p>
+<pre><code class="language-sql">SELECT c.cust_name
+FROM customer c
+LEFT JOIN Depositor d ON c.cust_name = d.cust_name
+LEFT JOIN Borrower b ON c.cust_name = b.cust_name
+WHERE d.cust_name IS NOT NULL OR b.cust_name IS NOT NULL;
+</code></pre>
+<p>Q.9 Find the average account balance at the Akurdi branch.</p>
+<pre><code class="language-sql">SELECT AVG(a.balance) AS average_balance
+FROM Account a
+WHERE a.branch_name = 'Akurdi';
+</code></pre>
+<p>Q.10 Find the number of depositors at each branch.</p>
+<pre><code class="language-sql">SELECT b.branch_name, COUNT(d.cust_name) AS depositor_count
+FROM branch b
+LEFT JOIN Account a ON b.branch_name = a.branch_name
+LEFT JOIN Depositor d ON a.Acc_no = d.acc_no
+GROUP BY b.branch_name;
+</code></pre>
+<p>Q.11 Delete all tuples at every branch located in Nigdi.</p>
+<pre><code class="language-sql">DELETE FROM branch
+WHERE branch_city = 'Nigdi';
+</code></pre>
+<p>Note: Please make sure to adjust the data types and lengths of columns based on your specific requirements.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 2. Consider following Bank database schema and solve given queries:
+Account(Acc_no, branch_name,balance)
+branch(branch_name,branch_city, assets)
+customer(cust_name,cust_street,cust_city)
+Depositor(cust_name,acc_no)
+Loan(loan_no,branch_name,amount)
+Borrower(cust_name,loan_no)
+Q.1 Create above tables with appropriate constraints like primary key, foreign key constrains, not null etc. with suitable data
+Q.2. Modify “assets” attribute of branch table to “Property”
+Q.3. Find all loan numbers for loans made at Akurdi Branch with loan amount &gt; 12000.
+Q.4. Find all customers who have both account and loan at bank.
+Q.5. Find all customer who have account but no loan at the bank.
+Q.6. Find the average account balance at each branch
+Q.7. Find the branches where average account balance &gt; 12000.
+Q.8. Find number of tuples in customer relation.
+Q.9. Calculate total loan amount given by bank.
+Q.10. Delete all loans with loan amount between 1300 and 1500.
+Q.11. Create sequence roll_seq and use in student table for roll_no column.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Here are the SQL queries to solve the given problem:</p>
+<p>Q.1 Create the above tables with appropriate constraints like primary key, foreign key constraints, not null, etc., with suitable data.</p>
+<pre><code class="language-sql">-- Create the Account table
+CREATE TABLE Account (
+  Acc_no INT PRIMARY KEY,
+  branch_name VARCHAR(50) NOT NULL,
+  balance DECIMAL(10, 2),
+  FOREIGN KEY (branch_name) REFERENCES branch(branch_name)
+);
+
+-- Create the branch table
+CREATE TABLE branch (
+  branch_name VARCHAR(50) PRIMARY KEY,
+  branch_city VARCHAR(50),
+  assets DECIMAL(10, 2)
+);
+
+-- Create the customer table
+CREATE TABLE customer (
+  cust_name VARCHAR(50) PRIMARY KEY,
+  cust_street VARCHAR(50),
+  cust_city VARCHAR(50)
+);
+
+-- Create the Depositor table
+CREATE TABLE Depositor (
+  cust_name VARCHAR(50),
+  acc_no INT,
+  FOREIGN KEY (cust_name) REFERENCES customer(cust_name),
+  FOREIGN KEY (acc_no) REFERENCES Account(Acc_no)
+);
+
+-- Create the Loan table
+CREATE TABLE Loan (
+  loan_no INT PRIMARY KEY,
+  branch_name VARCHAR(50),
+  amount DECIMAL(10, 2),
+  FOREIGN KEY (branch_name) REFERENCES branch(branch_name)
+);
+
+-- Create the Borrower table
+CREATE TABLE Borrower (
+  cust_name VARCHAR(50),
+  loan_no INT,
+  FOREIGN KEY (cust_name) REFERENCES customer(cust_name),
+  FOREIGN KEY (loan_no) REFERENCES Loan(loan_no)
+);
+
+-- Insert sample data into tables
+INSERT INTO Account (Acc_no, branch_name, balance)
+VALUES (1, 'Branch1', 10000), (2, 'Branch2', 20000), (3, 'Branch1', 15000);
+
+INSERT INTO branch (branch_name, branch_city, assets)
+VALUES ('Branch1', 'City1', 50000), ('Branch2', 'City2', 75000);
+
+INSERT INTO customer (cust_name, cust_street, cust_city)
+VALUES ('Customer1', 'Street1', 'City1'), ('Customer2', 'Street2', 'City2'), ('Customer3', 'Street3', 'City1');
+
+INSERT INTO Depositor (cust_name, acc_no)
+VALUES ('Customer1', 1), ('Customer2', 2), ('Customer3', 3);
+
+INSERT INTO Loan (loan_no, branch_name, amount)
+VALUES (1, 'Branch1', 10000), (2, 'Branch2', 15000), (3, 'Branch1', 20000);
+
+INSERT INTO Borrower (cust_name, loan_no)
+VALUES ('Customer1', 1), ('Customer2', 2), ('Customer3', 3);
+</code></pre>
+<p>Q.2 Modify the "assets" attribute of the branch table to "Property".</p>
+<pre><code class="language-sql">ALTER TABLE branch
+RENAME COLUMN assets TO Property;
+</code></pre>
+<p>Q.3 Find all loan numbers for loans made at the Akurdi Branch with a loan amount greater than 12000.</p>
+<pre><code class="language-sql">SELECT loan_no
+FROM Loan
+WHERE branch_name = 'Akurdi' AND amount > 12000;
+</code></pre>
+<p>Q.4 Find all customers who have both an account and a loan at the bank.</p>
+<pre><code class="language-sql">SELECT c.cust_name
+FROM customer c
+JOIN Depositor d ON c.cust_name = d.cust_name
+JOIN Borrower b ON c.cust_name = b.cust_name;
+</code></pre>
+<p>Q.5 Find all customers who have an account but no loan at the bank.</p>
+<pre><code class="language-sql">SELECT c.cust_name
+FROM customer c
+LEFT JOIN Depositor d ON c.cust_name = d.cust_name
+WHERE d.cust_name IS NULL;
+</code></pre>
+<p>Q.6 Find the average account balance at each branch.</p>
+<pre><code class="language-sql">SELECT branch_name, AVG(balance) AS average_balance
+FROM Account
+GROUP BY branch_name;
+</code></pre>
+<p>Q.7 Find the branches where the average account balance is greater than 12000.</p>
+<pre><code class="language-sql">SELECT branch_name
+FROM Account
+GROUP BY branch_name
+HAVING AVG(balance) > 12000;
+</code></pre>
+<p>Q.8 Find the number of tuples in the customer relation.</p>
+<pre><code class="language-sql">SELECT COUNT(*) AS tuple_count
+FROM customer;
+</code></pre>
+<p>Q.9 Calculate the total loan amount given by the bank.</p>
+<pre><code class="language-sql">SELECT SUM(amount) AS total_loan_amount
+FROM Loan;
+</code></pre>
+<p>Q.10 Delete all loans with a loan amount between 1300 and 1500.</p>
+<pre><code class="language-sql">DELETE FROM Loan
+WHERE amount BETWEEN 1300 AND 1500;
+</code></pre>
+<p>Q.11 Create a sequence "roll_seq" and use it in the student table for the "roll_no" column.</p>
+<pre><code class="language-sql">-- Create the sequence
+CREATE SEQUENCE roll_seq
+START WITH 1
+INCREMENT BY 1
+NOCACHE
+NOCYCLE;
+
+-- Create the student table with the roll_no column using the sequence
+CREATE TABLE student (
+  roll_no INT DEFAULT roll_seq.NEXTVAL,
+  student_name VARCHAR(50),
+  PRIMARY KEY (roll_no)
+);
+</code></pre>
+<p>Note: Please make sure to adjust the data types and lengths of columns based on your specific requirements.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 3.
+a) Consider following database schema and solve given queries
+cust_mstr(cust_no,fname,lname)
+add_dets(code_no,add1,add2,state,city,pincode)
+1. Create above Tables with suitable data
+2. Retrieve the address of customer Fname as &#039;xyz&#039; and Lname as &#039;pqr&#039;
+3. Create View on add_dets table by selecting any two columns and perform insert update delete operations
+b) Create following Tables
+emp_mstr(e_mpno,f_name,l_name,m_name,dept,desg,branch_no)
+branch_mstr(name,b_no)
+List the employee details along with branch names to which they belong</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>a) Here are the SQL queries to solve the given problem:</p>
+<ol>
+<li>Create the above tables with suitable data.</li>
+</ol>
+<pre><code class="language-sql">-- Create the cust_mstr table
+CREATE TABLE cust_mstr (
+  cust_no INT PRIMARY KEY,
+  fname VARCHAR(50),
+  lname VARCHAR(50)
+);
+
+-- Create the add_dets table
+CREATE TABLE add_dets (
+  code_no INT PRIMARY KEY,
+  add1 VARCHAR(100),
+  add2 VARCHAR(100),
+  state VARCHAR(50),
+  city VARCHAR(50),
+  pincode VARCHAR(10)
+);
+
+-- Insert sample data into cust_mstr table
+INSERT INTO cust_mstr (cust_no, fname, lname)
+VALUES (1, 'John', 'Doe'), (2, 'Jane', 'Smith'), (3, 'Alice', 'Johnson');
+
+-- Insert sample data into add_dets table
+INSERT INTO add_dets (code_no, add1, add2, state, city, pincode)
+VALUES (1, 'Street 1', 'Apt 101', 'California', 'Los Angeles', '90001'),
+       (2, 'Street 2', 'Apt 202', 'Texas', 'Houston', '77001'),
+       (3, 'Street 3', 'Apt 303', 'New York', 'New York City', '10001');
+</code></pre>
+<ol start="2">
+<li>Retrieve the address of the customer with Fname as 'xyz' and Lname as 'pqr'.</li>
+</ol>
+<pre><code class="language-sql">SELECT a.add1, a.add2, a.state, a.city, a.pincode
+FROM cust_mstr c
+JOIN add_dets a ON c.cust_no = a.code_no
+WHERE c.fname = 'xyz' AND c.lname = 'pqr';
+</code></pre>
+<ol start="3">
+<li>Create a view on the add_dets table by selecting any two columns and perform insert, update, delete operations.</li>
+</ol>
+<pre><code class="language-sql">-- Create the view
+CREATE VIEW add_dets_view AS
+SELECT code_no, add1
+FROM add_dets;
+
+-- Insert into the view
+INSERT INTO add_dets_view (code_no, add1)
+VALUES (4, 'New Address');
+
+-- Update the view
+UPDATE add_dets_view
+SET add1 = 'Updated Address'
+WHERE code_no = 4;
+
+-- Delete from the view
+DELETE FROM add_dets_view
+WHERE code_no = 4;
+</code></pre>
+<p>b) Here are the SQL statements to create the required tables and retrieve the employee details along with branch names to which they belong:</p>
+<pre><code class="language-sql">-- Create the emp_mstr table
+CREATE TABLE emp_mstr (
+  e_mpno INT PRIMARY KEY,
+  f_name VARCHAR(50),
+  l_name VARCHAR(50),
+  m_name VARCHAR(50),
+  dept VARCHAR(50),
+  desg VARCHAR(50),
+  branch_no INT
+);
+
+-- Create the branch_mstr table
+CREATE TABLE branch_mstr (
+  name VARCHAR(50),
+  b_no INT PRIMARY KEY
+);
+
+-- Insert sample data into emp_mstr table
+INSERT INTO emp_mstr (e_mpno, f_name, l_name, m_name, dept, desg, branch_no)
+VALUES (1, 'John', 'Doe', 'M', 'Finance', 'Manager', 101),
+       (2, 'Jane', 'Smith', 'N', 'HR', 'Assistant', 102),
+       (3, 'Alice', 'Johnson', 'P', 'Sales', 'Executive', 101);
+
+-- Insert sample data into branch_mstr table
+INSERT INTO branch_mstr (name, b_no)
+VALUES ('Branch1', 101), ('Branch2', 102);
+
+-- Retrieve employee details along with branch names
+SELECT e.e_mpno, e.f_name, e.l_name, e.m_name, e.dept, e.desg, b.name AS branch_name
+FROM emp_mstr e
+JOIN branch_mstr b ON e.branch_no = b.b_no;
+</code></pre>
+<p>Note: Please adjust the data types and lengths of columns based on your specific requirements.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 4.
+a) Create following Tables with suitable data and solve following query
+cust_mstr(custno,fname,lname)
+acc_fd_cust_dets(codeno,acc_fd_no)
+fd_dets(fd_sr_no,amt)
+List the customer holding fixed deposit of amount more than 5000
+b) Create view on cust_mstr and acc_fd_cust_dets tables by selecting any one column
+from each table perform insert update delete operations
+c) Create following Tables with suitable data and solve following query
+emp_mstr(emp_no,f_name,l_name,m_name,dept)
+cntc_dets(code_no,cntc_type,cntc_data)
+List the employee details along with contact details using left outer join &amp; right join</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>a) Here are the SQL queries to solve the given problem:</p>
+<ol>
+<li>Create the cust_mstr, acc_fd_cust_dets, and fd_dets tables with suitable data.</li>
+</ol>
+<pre><code class="language-sql">-- Create the cust_mstr table
+CREATE TABLE cust_mstr (
+  custno INT PRIMARY KEY,
+  fname VARCHAR(50),
+  lname VARCHAR(50)
+);
+
+-- Create the acc_fd_cust_dets table
+CREATE TABLE acc_fd_cust_dets (
+  codeno INT PRIMARY KEY,
+  acc_fd_no INT
+);
+
+-- Create the fd_dets table
+CREATE TABLE fd_dets (
+  fd_sr_no INT PRIMARY KEY,
+  amt DECIMAL(10, 2)
+);
+
+-- Insert sample data into cust_mstr table
+INSERT INTO cust_mstr (custno, fname, lname)
+VALUES (1, 'John', 'Doe'), (2, 'Jane', 'Smith'), (3, 'Alice', 'Johnson');
+
+-- Insert sample data into acc_fd_cust_dets table
+INSERT INTO acc_fd_cust_dets (codeno, acc_fd_no)
+VALUES (1, 101), (2, 102), (3, 103);
+
+-- Insert sample data into fd_dets table
+INSERT INTO fd_dets (fd_sr_no, amt)
+VALUES (101, 5000), (102, 8000), (103, 3000);
+</code></pre>
+<ol start="2">
+<li>List the customers holding fixed deposits of an amount more than 5000.</li>
+</ol>
+<pre><code class="language-sql">SELECT cm.custno, cm.fname, cm.lname
+FROM cust_mstr cm
+JOIN acc_fd_cust_dets acd ON cm.custno = acd.codeno
+JOIN fd_dets fd ON acd.acc_fd_no = fd.fd_sr_no
+WHERE fd.amt > 5000;
+</code></pre>
+<p>b) Here are the SQL statements to create a view on the cust_mstr and acc_fd_cust_dets tables, and perform insert, update, and delete operations:</p>
+<pre><code class="language-sql">-- Create a view on cust_mstr and acc_fd_cust_dets tables
+CREATE VIEW cust_acc_fd_view AS
+SELECT c.custno, a.acc_fd_no
+FROM cust_mstr c
+JOIN acc_fd_cust_dets a ON c.custno = a.codeno;
+
+-- Insert into the view
+INSERT INTO cust_acc_fd_view (custno, acc_fd_no)
+VALUES (4, 104);
+
+-- Update the view
+UPDATE cust_acc_fd_view
+SET acc_fd_no = 105
+WHERE custno = 4;
+
+-- Delete from the view
+DELETE FROM cust_acc_fd_view
+WHERE custno = 4;
+</code></pre>
+<p>c) Here are the SQL queries to create the required tables, insert sample data, and list the employee details along with contact details using left outer join and right join:</p>
+<pre><code class="language-sql">-- Create the emp_mstr table
+CREATE TABLE emp_mstr (
+  emp_no INT PRIMARY KEY,
+  f_name VARCHAR(50),
+  l_name VARCHAR(50),
+  m_name VARCHAR(50),
+  dept VARCHAR(50)
+);
+
+-- Create the cntc_dets table
+CREATE TABLE cntc_dets (
+  code_no INT PRIMARY KEY,
+  cntc_type VARCHAR(50),
+  cntc_data VARCHAR(100)
+);
+
+-- Insert sample data into emp_mstr table
+INSERT INTO emp_mstr (emp_no, f_name, l_name, m_name, dept)
+VALUES (1, 'John', 'Doe', 'M', 'Finance'),
+       (2, 'Jane', 'Smith', 'N', 'HR'),
+       (3, 'Alice', 'Johnson', 'P', 'Sales');
+
+-- Insert sample data into cntc_dets table
+INSERT INTO cntc_dets (code_no, cntc_type, cntc_data)
+VALUES (1, 'Phone', '123-456-7890'),
+       (2, 'Email', 'john.doe@example.com'),
+       (3, 'Phone', '987-654-3210');
+
+-- List employee details along with contact details using left outer join
+SELECT e.emp_no, e.f_name, e.l_name, e.m_name, e.dept, c.cntc_type, c.cntc_data
+FROM emp_mstr e
+LEFT JOIN cntc_dets c ON e.emp_no = c.code_no;
+
+-- List employee details along with contact details using right join
+SELECT e.emp_no, e.f_name, e.l_name, e.m_name, e.dept, c.cntc_type, c.cntc_data
+FROM emp_mstr e
+RIGHT JOIN cntc_dets c ON e.emp_no = c.code_no;
+</code></pre>
+<p>Note: Please adjust the data types and lengths of columns based on your specific requirements.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 5.
+a) Consider following database schema and solve given queries
+cust_mstr(cust_no,fname,lname)
+add_dets(code_no,add1,add2,state,city,pincode)
+1. Create above Tables with suitable data
+2. Retrieve the address of customer Fname as &#039;xyz&#039; and Lname as &#039;pqr&#039;
+3. Create View on add_dets table by selecting any two columns and perform insert update delete operations
+b) Create following Tables
+cust_mstr(cust_no,fname,lname)
+add_dets(code_no,pincode)
+List the customer who do not have bank branches in their vicinity.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>a) Here are the SQL queries to solve the given problem:</p>
+<ol>
+<li>Create the cust_mstr and add_dets tables with suitable data.</li>
+</ol>
+<pre><code class="language-sql">-- Create the cust_mstr table
+CREATE TABLE cust_mstr (
+  cust_no INT PRIMARY KEY,
+  fname VARCHAR(50),
+  lname VARCHAR(50)
+);
+
+-- Create the add_dets table
+CREATE TABLE add_dets (
+  code_no INT PRIMARY KEY,
+  add1 VARCHAR(100),
+  add2 VARCHAR(100),
+  state VARCHAR(50),
+  city VARCHAR(50),
+  pincode VARCHAR(10)
+);
+
+-- Insert sample data into cust_mstr table
+INSERT INTO cust_mstr (cust_no, fname, lname)
+VALUES (1, 'John', 'Doe'), (2, 'Jane', 'Smith'), (3, 'Alice', 'Johnson');
+
+-- Insert sample data into add_dets table
+INSERT INTO add_dets (code_no, add1, add2, state, city, pincode)
+VALUES (1, 'Street 1', 'Apt 101', 'California', 'Los Angeles', '90001'),
+       (2, 'Street 2', 'Apt 202', 'Texas', 'Houston', '77001'),
+       (3, 'Street 3', 'Apt 303', 'New York', 'New York City', '10001');
+</code></pre>
+<ol start="2">
+<li>Retrieve the address of the customer with Fname as 'xyz' and Lname as 'pqr'.</li>
+</ol>
+<pre><code class="language-sql">SELECT a.add1, a.add2, a.state, a.city, a.pincode
+FROM cust_mstr c
+JOIN add_dets a ON c.cust_no = a.code_no
+WHERE c.fname = 'xyz' AND c.lname = 'pqr';
+</code></pre>
+<ol start="3">
+<li>Create a view on the add_dets table by selecting any two columns and perform insert, update, and delete operations.</li>
+</ol>
+<pre><code class="language-sql">-- Create the view
+CREATE VIEW add_dets_view AS
+SELECT code_no, add1
+FROM add_dets;
+
+-- Insert into the view
+INSERT INTO add_dets_view (code_no, add1)
+VALUES (4, 'New Address');
+
+-- Update the view
+UPDATE add_dets_view
+SET add1 = 'Updated Address'
+WHERE code_no = 4;
+
+-- Delete from the view
+DELETE FROM add_dets_view
+WHERE code_no = 4;
+</code></pre>
+<p>b) Here is the SQL query to create the cust_mstr and add_dets tables, insert sample data, and list the customers who do not have bank branches in their vicinity:</p>
+<pre><code class="language-sql">-- Create the cust_mstr table
+CREATE TABLE cust_mstr (
+  cust_no INT PRIMARY KEY,
+  fname VARCHAR(50),
+  lname VARCHAR(50)
+);
+
+-- Create the add_dets table
+CREATE TABLE add_dets (
+  code_no INT PRIMARY KEY,
+  pincode VARCHAR(10)
+);
+
+-- Insert sample data into cust_mstr table
+INSERT INTO cust_mstr (cust_no, fname, lname)
+VALUES (1, 'John', 'Doe'), (2, 'Jane', 'Smith'), (3, 'Alice', 'Johnson');
+
+-- Insert sample data into add_dets table
+INSERT INTO add_dets (code_no, pincode)
+VALUES (1, '90001'), (2, '77001'), (3, '10001');
+
+-- List the customers who do not have bank branches in their vicinity
+SELECT c.cust_no, c.fname, c.lname
+FROM cust_mstr c
+LEFT JOIN add_dets a ON c.cust_no = a.code_no
+WHERE a.code_no IS NULL;
+</code></pre>
+<p>Note: Please adjust the data types and lengths of columns based on your specific requirements.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 6.
+Q 1. Consider table Stud(Roll, Att,Status)
+Write a PL/SQL block for following requirement and handle the exceptions.
+Roll no. of student will be entered by user. Attendance of roll no. entered by user will be checked in
+Stud table. If attendance is less than 75% then display the message “Term not granted” and set the
+status in stud table as “D”. Otherwise display message “Term granted” and set the status in stud table as “ND”.
+Q 2. The bank manager has decided to activate all those accounts which were previously marked as
+inactive for performing no transaction in last 365 days. Write a PL/SQ block (using implicit cursor) to update the status of account, display an approximate message based on the no. of rows affected by the update. (Use of %FOUND, %NOTFOUND, %ROWCOUNT)</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Here are the PL/SQL blocks to address the given requirements and handle exceptions:</p>
+<p>Q 1. PL/SQL block to check attendance and update status in the Stud table:</p>
+<pre><code class="language-sql">DECLARE
+  v_roll Stud.Roll%TYPE;
+  v_att Stud.Att%TYPE;
+  v_status Stud.Status%TYPE;
+BEGIN
+  -- Accept roll number from user
+  v_roll := &#x26;Enter_Roll_Number;
+
+  -- Retrieve attendance for the entered roll number
+  SELECT Att, Status INTO v_att, v_status
+  FROM Stud
+  WHERE Roll = v_roll;
+
+  -- Check attendance and update status accordingly
+  IF v_att &#x3C; 75 THEN
+    DBMS_OUTPUT.PUT_LINE('Term not granted');
+    v_status := 'D';
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Term granted');
+    v_status := 'ND';
+  END IF;
+
+  -- Update status in Stud table
+  UPDATE Stud
+  SET Status = v_status
+  WHERE Roll = v_roll;
+
+  DBMS_OUTPUT.PUT_LINE('Status updated successfully');
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('Invalid roll number');
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>Q 2. PL/SQL block to activate inactive accounts and display message based on the number of rows affected:</p>
+<pre><code class="language-sql">DECLARE
+  v_count NUMBER;
+BEGIN
+  -- Activate inactive accounts
+  UPDATE BankAccounts
+  SET Status = 'Active'
+  WHERE LastTransactionDate &#x3C; SYSDATE - 365;
+
+  -- Get the number of rows affected
+  v_count := SQL%ROWCOUNT;
+
+  -- Display approximate message based on the number of rows affected
+  IF v_count = 0 THEN
+    DBMS_OUTPUT.PUT_LINE('No inactive accounts found');
+  ELSIF v_count = 1 THEN
+    DBMS_OUTPUT.PUT_LINE('1 account has been activated');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE(v_count || ' accounts have been activated');
+  END IF;
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>Note: In the first PL/SQL block, replace <code>Stud</code> with the actual table name. In the second PL/SQL block, replace <code>BankAccounts</code> with the actual table name. Also, adjust the column names and data types based on your specific table structure.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 7.
+Q 1. Write an SQL code block these raise a user defined exception where business rule is voilated. BR for client_master table specifies when the value of bal_due field is less than 0 handle the exception.
+Q 2. Organization has decided to increase the salary of employees by 10% of existing salary, who are having salary less than average salary of organization, Whenever such salary updates takes place, a record for the same is maintained in the increment_salary table.
+EMP (E_no , Salary)
+increment_salary(E_no , Salary)</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Q 1. SQL code block to raise a user-defined exception when the business rule is violated in the client_master table:</p>
+<pre><code class="language-sql">DECLARE
+  v_bal_due client_master.bal_due%TYPE;
+BEGIN
+  -- Retrieve bal_due value from client_master table
+  SELECT bal_due INTO v_bal_due
+  FROM client_master
+  WHERE &#x3C;condition>; -- Specify the condition for selecting the appropriate record
+
+  -- Check if bal_due is less than 0
+  IF v_bal_due &#x3C; 0 THEN
+    -- Raise user-defined exception
+    RAISE_APPLICATION_ERROR(-20001, 'Business rule violated: bal_due cannot be less than 0');
+  END IF;
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    -- Handle no data found exception
+    RAISE_APPLICATION_ERROR(-20002, 'No record found in client_master table');
+  WHEN OTHERS THEN
+    -- Handle other exceptions
+    RAISE_APPLICATION_ERROR(-20003, 'An error occurred: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>Note: Replace <code>client_master</code> with the actual table name, and <code>&#x3C;condition></code> with the appropriate condition to select the desired record.</p>
+<p>Q 2. SQL code block to increase the salary of employees by 10% and maintain a record in the increment_salary table:</p>
+<pre><code class="language-sql">DECLARE
+  v_avg_salary NUMBER;
+BEGIN
+  -- Calculate the average salary of organization
+  SELECT AVG(salary) INTO v_avg_salary
+  FROM EMP;
+
+  -- Update salaries and insert records in increment_salary table
+  UPDATE EMP
+  SET salary = salary * 1.1
+  WHERE salary &#x3C; v_avg_salary;
+
+  -- Insert records into increment_salary table
+  INSERT INTO increment_salary (E_no, Salary)
+  SELECT E_no, salary
+  FROM EMP
+  WHERE salary &#x3C; v_avg_salary;
+
+  -- Display a message indicating the number of employees whose salaries were increased
+  DBMS_OUTPUT.PUT_LINE(SQL%ROWCOUNT || ' employees had their salaries increased');
+EXCEPTION
+  WHEN OTHERS THEN
+    -- Handle exceptions
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>Note: Replace <code>EMP</code> with the actual table name and adjust the column names and data types based on your specific table structure. Also, make sure the <code>increment_salary</code> table is created with the required columns.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 8.
+Q 1. Borrower(Roll_no, Name, DateofIssue, NameofBook, Status)
+Fine(Roll_no,Date,Amt)
+1. Accept roll_no &amp; name of book from user.
+2. Check the number of days (from date of issue), if days are between 15 to 30 then fine amount will be Rs 5per day.
+3. If no. of days&gt;30, per day fine will be Rs 50 per day &amp; for days less than 30, Rs. 5 per day.
+After submitting the book, status will change from I to R
+4. If condition of fine is true, then details will be stored into fine table.
+5. Also handles the exception by named exception handler or user define exception handler.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Here is a PL/SQL block that addresses the given requirements and handles exceptions:</p>
+<pre><code class="language-sql">DECLARE
+  v_roll_no Borrower.Roll_no%TYPE;
+  v_name_of_book Borrower.NameofBook%TYPE;
+  v_date_of_issue Borrower.DateofIssue%TYPE;
+  v_status Borrower.Status%TYPE;
+  v_days NUMBER;
+  v_fine_amt NUMBER;
+BEGIN
+  -- Accept roll_no and name_of_book from the user
+  v_roll_no := &#x26;Enter_Roll_Number;
+  v_name_of_book := '&#x26;Enter_Book_Name';
+
+  -- Retrieve the necessary information from the Borrower table
+  SELECT DateofIssue, Status INTO v_date_of_issue, v_status
+  FROM Borrower
+  WHERE Roll_no = v_roll_no AND NameofBook = v_name_of_book;
+
+  -- Calculate the number of days since the date of issue
+  v_days := SYSDATE - v_date_of_issue;
+
+  -- Check if the fine conditions are met
+  IF v_days > 30 THEN
+    v_fine_amt := 50 * (v_days - 30);
+  ELSE
+    v_fine_amt := 5 * v_days;
+  END IF;
+
+  -- Update the status in the Borrower table
+  UPDATE Borrower
+  SET Status = 'R'
+  WHERE Roll_no = v_roll_no AND NameofBook = v_name_of_book;
+
+  -- Check if fine is applicable and store details in the Fine table
+  IF v_fine_amt > 0 THEN
+    INSERT INTO Fine (Roll_no, Date, Amt)
+    VALUES (v_roll_no, SYSDATE, v_fine_amt);
+  END IF;
+
+  DBMS_OUTPUT.PUT_LINE('Book submitted successfully');
+
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('No record found for the provided roll number and book name');
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>Note: Replace <code>Borrower</code> and <code>Fine</code> with the actual table names, adjust the column names and data types based on your specific table structure, and customize the exception handling as required.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 9.
+Q 1. Write PL/SQL block using explicit cursor for following requirements:
+College has decided to mark all those students detained (D) who are having attendance less than 75%.
+Whenever such update takes place, a record for the same is maintained in the D_Stud table.
+create table stud21(roll number(4), att number(4), status varchar(1));
+create table d_stud(roll number(4), att number(4));</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Here is a PL/SQL block that uses an explicit cursor to address the given requirements:</p>
+<pre><code class="language-sql">DECLARE
+  CURSOR c_students IS
+    SELECT roll, att
+    FROM stud21
+    WHERE att &#x3C; 75;
+
+  v_roll stud21.roll%TYPE;
+  v_att stud21.att%TYPE;
+BEGIN
+  -- Open the cursor
+  OPEN c_students;
+
+  -- Fetch and process the records
+  LOOP
+    FETCH c_students INTO v_roll, v_att;
+    EXIT WHEN c_students%NOTFOUND;
+
+    -- Update the status in stud21 table
+    UPDATE stud21
+    SET status = 'D'
+    WHERE roll = v_roll;
+
+    -- Insert a record into d_stud table
+    INSERT INTO d_stud (roll, att)
+    VALUES (v_roll, v_att);
+  END LOOP;
+
+  -- Close the cursor
+  CLOSE c_students;
+
+  DBMS_OUTPUT.PUT_LINE('Detained students marked and records inserted into D_Stud table.');
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>Note: Make sure to adjust the table names and column names (<code>stud21</code> and <code>d_stud</code>) based on your actual table names. Also, modify the data types as necessary to match your table structure.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 10.
+Q 1. Consider table Stud(Roll, Att,Status)
+Write a PL/SQL block for following requirement and handle the exceptions.
+Roll no. of student will be entered by user. Attendance of roll no. entered by user will be checked in
+Stud table. If attendance is less than 75% then display the message “Term not granted” and set the
+status in stud table as “D”. Otherwise display message “Term granted” and set the status in stud table as “ND”.
+Q 2. Write a update, delete trigger on clientmstr table. The System should keep track of the records that ARE BEING updated or deleted. The old value of updated or deleted records should be added in audit_trade table. (separate implementation using both row and statement triggers)</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Q 1. PL/SQL block to check attendance and update status in the Stud table:</p>
+<pre><code class="language-sql">DECLARE
+  v_roll Stud.Roll%TYPE;
+  v_att Stud.Att%TYPE;
+BEGIN
+  -- Accept roll number from the user
+  v_roll := &#x26;Enter_Roll_Number;
+
+  -- Retrieve attendance from the Stud table
+  SELECT Att INTO v_att
+  FROM Stud
+  WHERE Roll = v_roll;
+
+  -- Check attendance and update status accordingly
+  IF v_att &#x3C; 75 THEN
+    UPDATE Stud
+    SET Status = 'D'
+    WHERE Roll = v_roll;
+    DBMS_OUTPUT.PUT_LINE('Term not granted');
+  ELSE
+    UPDATE Stud
+    SET Status = 'ND'
+    WHERE Roll = v_roll;
+    DBMS_OUTPUT.PUT_LINE('Term granted');
+  END IF;
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('No record found for the provided roll number');
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>Note: Replace <code>Stud</code> with the actual table name and adjust the column names and data types based on your specific table structure.</p>
+<p>Q 2. Update and delete triggers on clientmstr table to track changes in the audit_trade table:</p>
+<p>Using Row-Level Trigger:</p>
+<pre><code class="language-sql">CREATE OR REPLACE TRIGGER update_audit_trade_row
+AFTER UPDATE ON clientmstr
+FOR EACH ROW
+BEGIN
+  INSERT INTO audit_trade (old_value)
+  VALUES (:OLD.column_name);
+END;
+/
+
+CREATE OR REPLACE TRIGGER delete_audit_trade_row
+BEFORE DELETE ON clientmstr
+FOR EACH ROW
+BEGIN
+  INSERT INTO audit_trade (old_value)
+  VALUES (:OLD.column_name);
+END;
+/
+</code></pre>
+<p>Using Statement-Level Trigger:</p>
+<pre><code class="language-sql">CREATE OR REPLACE TRIGGER update_audit_trade_statement
+AFTER UPDATE ON clientmstr
+FOR EACH ROW
+BEGIN
+  IF UPDATING THEN
+    INSERT INTO audit_trade (old_value)
+    SELECT column_name
+    FROM clientmstr
+    WHERE primary_key_column = :OLD.primary_key_value;
+  END IF;
+END;
+/
+
+CREATE OR REPLACE TRIGGER delete_audit_trade_statement
+BEFORE DELETE ON clientmstr
+BEGIN
+  FOR rec IN (SELECT column_name
+              FROM clientmstr
+              WHERE primary_key_column = :OLD.primary_key_value)
+  LOOP
+    INSERT INTO audit_trade (old_value)
+    VALUES (rec.column_name);
+  END LOOP;
+END;
+/
+</code></pre>
+<p>Note: Replace <code>clientmstr</code> with the actual table name, <code>column_name</code> with the appropriate column name that you want to track, and <code>primary_key_column</code> and <code>primary_key_value</code> with the actual primary key column and value of your table. Also, make sure to have the <code>audit_trade</code> table created with the necessary columns.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 13.
+Q 1. Write a stored function in PL/SQL for given requirement and use the same in PL/SQL block.
+Account no. and branch name will be accepted from user. The same will be searched in table acct_details. If status of account is active then display appropriate message and also store the account details in active_acc_details table, otherwise display message on screen “account is inactive”.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Here is a PL/SQL stored function and a PL/SQL block that utilizes the function to fulfill the given requirement:</p>
+<p>Stored Function:</p>
+<pre><code class="language-sql">CREATE OR REPLACE FUNCTION CheckAccountStatus(p_acc_no IN acct_details.acc_no%TYPE, p_branch_name IN acct_details.branch_name%TYPE)
+  RETURN VARCHAR2
+IS
+  v_status acct_details.status%TYPE;
+BEGIN
+  -- Retrieve the account status from acct_details table
+  SELECT status INTO v_status
+  FROM acct_details
+  WHERE acc_no = p_acc_no AND branch_name = p_branch_name;
+
+  IF v_status = 'active' THEN
+    -- Insert account details into active_acc_details table
+    INSERT INTO active_acc_details (acc_no, branch_name)
+    VALUES (p_acc_no, p_branch_name);
+
+    RETURN 'Account is active';
+  ELSE
+    RETURN 'Account is inactive';
+  END IF;
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    RETURN 'No record found for the provided account number and branch name';
+  WHEN OTHERS THEN
+    RETURN 'An error occurred: ' || SQLERRM;
+END;
+/
+</code></pre>
+<p>PL/SQL Block:</p>
+<pre><code class="language-sql">DECLARE
+  v_acc_no acct_details.acc_no%TYPE;
+  v_branch_name acct_details.branch_name%TYPE;
+  v_result VARCHAR2(100);
+BEGIN
+  -- Accept account number and branch name from the user
+  v_acc_no := &#x26;Enter_Account_Number;
+  v_branch_name := '&#x26;Enter_Branch_Name';
+
+  -- Call the stored function to check account status
+  v_result := CheckAccountStatus(v_acc_no, v_branch_name);
+
+  DBMS_OUTPUT.PUT_LINE(v_result);
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>Note: Replace <code>acct_details</code> and <code>active_acc_details</code> with the actual table names, and adjust the column names and data types based on your specific table structure. Also, customize the exception handling as required.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 11.
+Q 1. Write an SQL code block these raise a user defined exception where business rule is voilated. BR for client_master table specifies when the value of bal_due field is less than 0 handle the exception.
+Q 2. Write a before trigger for Insert, update event considering following requirement:
+Emp(e_no, e_name, salary)
+I) Trigger action should be initiated when salary is tried to be inserted is less than Rs. 50,000/-
+II) Trigger action should be initiated when salary is tried to be updated for value less than Rs. 50,000/-
+Action should be rejection of update or Insert operation by displaying appropriate error message. Also the new values expected to be inserted will be stored in new table.
+Tracking(e_no, salary).</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Q 1. SQL code block to raise a user-defined exception for a violated business rule:</p>
+<pre><code class="language-sql">DECLARE
+  v_bal_due client_master.bal_due%TYPE;
+BEGIN
+  -- Retrieve the value of bal_due field from client_master table
+  SELECT bal_due INTO v_bal_due
+  FROM client_master;
+
+  -- Check if the bal_due field is less than 0
+  IF v_bal_due &#x3C; 0 THEN
+    -- Raise a user-defined exception
+    RAISE_APPLICATION_ERROR(-20001, 'Business rule violated: bal_due cannot be less than 0');
+  END IF;
+EXCEPTION
+  WHEN OTHERS THEN
+    -- Handle the exception
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>Note: Replace <code>client_master</code> with the actual table name and adjust the column name and data type as per your table structure. You can customize the exception message and error code as needed.</p>
+<p>Q 2. Before trigger for Insert and Update events to validate the salary in the Emp table:</p>
+<pre><code class="language-sql">CREATE OR REPLACE TRIGGER salary_check
+BEFORE INSERT OR UPDATE ON Emp
+FOR EACH ROW
+DECLARE
+  v_salary Emp.salary%TYPE;
+BEGIN
+  IF INSERTING THEN
+    v_salary := :NEW.salary;
+  ELSIF UPDATING THEN
+    v_salary := :NEW.salary;
+  END IF;
+
+  -- Check if the salary is less than Rs. 50,000/-
+  IF v_salary &#x3C; 50000 THEN
+    -- Raise an exception to reject the operation
+    RAISE_APPLICATION_ERROR(-20002, 'Salary cannot be less than Rs. 50,000/-');
+  ELSE
+    -- Insert the new values into the Tracking table
+    INSERT INTO Tracking (e_no, salary)
+    VALUES (:NEW.e_no, v_salary);
+  END IF;
+EXCEPTION
+  WHEN OTHERS THEN
+    -- Handle the exception
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>Note: Replace <code>Emp</code> with the actual table name, adjust the column names and data types as per your table structure, and create the <code>Tracking</code> table with the necessary columns. You can customize the exception message and error code as needed.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 12.
+Q 1. . Write a PL/SQL stored Procedure for following requirements and call the procedure in appropriate
+PL/SQL block.
+Borrower(Rollin, Name, DateofIssue, NameofBook, Status)
+Fine(Roll_no,Date,Amt)
+Accept roll_no &amp; name of book from user.
+1. Check the number of days (from date of issue), if days are between 15 to 30 then fine amount will be Rs 5per day.
+2. If no. of days&gt;30, per day fine will be Rs 50 per day &amp; for days less than 30, Rs. 5 per day.
+3. After submitting the book, status will change from I to R.
+4. If condition of fine is true, then details will be stored into fine table.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Here is a PL/SQL stored procedure that fulfills the given requirements:</p>
+<pre><code class="language-sql">CREATE OR REPLACE PROCEDURE ProcessFine(
+  p_roll_no IN Borrower.Rollin%TYPE,
+  p_book_name IN Borrower.NameofBook%TYPE
+)
+IS
+  v_date_of_issue Borrower.DateofIssue%TYPE;
+  v_fine_amt Fine.Amt%TYPE;
+  v_days_overdue NUMBER;
+BEGIN
+  -- Retrieve the date of issue for the given roll number and book name
+  SELECT DateofIssue INTO v_date_of_issue
+  FROM Borrower
+  WHERE Rollin = p_roll_no AND NameofBook = p_book_name;
+
+  -- Calculate the number of days overdue
+  v_days_overdue := TRUNC(SYSDATE) - v_date_of_issue;
+
+  IF v_days_overdue &#x3C;= 0 THEN
+    -- Book returned on time, no fine
+    UPDATE Borrower
+    SET Status = 'R'
+    WHERE Rollin = p_roll_no AND NameofBook = p_book_name;
+  ELSIF v_days_overdue &#x3C;= 30 THEN
+    -- Calculate fine amount for days between 15 to 30
+    v_fine_amt := v_days_overdue * 5;
+
+    -- Update the status and insert fine details into the Fine table
+    UPDATE Borrower
+    SET Status = 'R'
+    WHERE Rollin = p_roll_no AND NameofBook = p_book_name;
+
+    INSERT INTO Fine (Roll_no, Date, Amt)
+    VALUES (p_roll_no, SYSDATE, v_fine_amt);
+  ELSE
+    -- Calculate fine amount for days exceeding 30
+    v_fine_amt := v_days_overdue * 50;
+
+    -- Update the status and insert fine details into the Fine table
+    UPDATE Borrower
+    SET Status = 'R'
+    WHERE Rollin = p_roll_no AND NameofBook = p_book_name;
+
+    INSERT INTO Fine (Roll_no, Date, Amt)
+    VALUES (p_roll_no, SYSDATE, v_fine_amt);
+  END IF;
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('No record found for the provided roll number and book name');
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>To call the procedure in an appropriate PL/SQL block, you can use the following example:</p>
+<pre><code class="language-sql">DECLARE
+  v_roll_no Borrower.Rollin%TYPE;
+  v_book_name Borrower.NameofBook%TYPE;
+BEGIN
+  -- Accept roll number and book name from the user
+  v_roll_no := &#x26;Enter_Roll_Number;
+  v_book_name := '&#x26;Enter_Book_Name';
+
+  -- Call the stored procedure to process the fine
+  ProcessFine(v_roll_no, v_book_name);
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>Note: Replace <code>Borrower</code> and <code>Fine</code> with the actual table names, adjust the column names and data types as per your table structure. Customize the exception handling and output as needed.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 14.
+Q 1. Write a Stored Procedure namely proc_Grade for the categorization of student. If marks scored by students in examination is &lt;=1500 and marks&gt;=990 then student will be placed in distinction category if marks scored are between 989 and900 category is first class, if marks 899 and 825 category is Higher Second Class.
+Write a PL/SQL block for using procedure created with above requirement.
+Stud_Marks(name, total_marks)
+Result(Roll,Name, Class)</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Here is the stored procedure <code>proc_Grade</code> that categorizes students based on their marks:</p>
+<pre><code class="language-sql">CREATE OR REPLACE PROCEDURE proc_Grade(
+  p_name IN Stud_Marks.Name%TYPE,
+  p_total_marks IN Stud_Marks.Total_Marks%TYPE,
+  p_class OUT Result.Class%TYPE
+)
+IS
+BEGIN
+  IF p_total_marks >= 990 AND p_total_marks &#x3C;= 1500 THEN
+    p_class := 'Distinction';
+  ELSIF p_total_marks >= 900 AND p_total_marks &#x3C;= 989 THEN
+    p_class := 'First Class';
+  ELSIF p_total_marks >= 825 AND p_total_marks &#x3C;= 899 THEN
+    p_class := 'Higher Second Class';
+  ELSE
+    p_class := 'Not Categorized';
+  END IF;
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+    p_class := 'Error';
+END;
+/
+</code></pre>
+<p>To use the <code>proc_Grade</code> procedure in a PL/SQL block, you can use the following example:</p>
+<pre><code class="language-sql">DECLARE
+  v_name Stud_Marks.Name%TYPE;
+  v_total_marks Stud_Marks.Total_Marks%TYPE;
+  v_class Result.Class%TYPE;
+BEGIN
+  -- Accept student name and total marks from the user
+  v_name := '&#x26;Enter_Student_Name';
+  v_total_marks := &#x26;Enter_Total_Marks;
+
+  -- Call the stored procedure to categorize the student
+  proc_Grade(v_name, v_total_marks, v_class);
+
+  -- Insert the result into the Result table
+  INSERT INTO Result (Roll, Name, Class)
+  VALUES (SEQ_Roll.NEXTVAL, v_name, v_class);
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>Note: Replace <code>Stud_Marks</code> and <code>Result</code> with the actual table names, adjust the column names and data types as per your table structure. Customize the exception handling and output as needed.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 15.
+Create Database PCCOE
+Create following Collections
+Teachers(Tname,dno,dname,experience,salary,date_of_joining )
+Students(Sname,roll_no,class)
+Q1. Find the information about all teachers
+Q2. Find the information about all teachers of computer department
+Q3. Find the information about all teachers of computer,IT,and e&amp;TC department
+Q4. Find the information about all teachers of computer,IT,and E&amp;TC department having salary greater than or equl to 10000/-
+Q5. Find the student information having roll_no = 2 or Sname=xyz
+Q6. Update the experience of teacher-praveen to 10years, if the entry is not available in database
+consider the entry as new entry.
+Q7. Update the deparment of all the teachers working in IT deprtment to COMP
+Q8. Find the teachers name and their experience from teachers collection
+Q9. Using Save() method insert one entry in department collection
+Q10. Using Save() method change the dept of teacher praveen to IT
+Q11. Delete all the doccuments from teachers collection having IT dept.
+Q12. Display with pretty() method, the first 3 doccuments in teachers collection in ascending order.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To solve the given queries, assuming you are using MongoDB as the database management system, here are the corresponding MongoDB queries:</p>
+<ol>
+<li>Find the information about all teachers:</li>
+</ol>
+<pre><code class="language-mongodb">db.teachers.find({})
+</code></pre>
+<ol start="2">
+<li>Find the information about all teachers of the computer department:</li>
+</ol>
+<pre><code class="language-mongodb">db.teachers.find({ dname: "Computer" })
+</code></pre>
+<ol start="3">
+<li>Find the information about all teachers of the computer, IT, and E&#x26;TC departments:</li>
+</ol>
+<pre><code class="language-mongodb">db.teachers.find({ dname: { $in: ["Computer", "IT", "E&#x26;TC"] } })
+</code></pre>
+<ol start="4">
+<li>Find the information about all teachers of the computer, IT, and E&#x26;TC departments having salary greater than or equal to 10000/-:</li>
+</ol>
+<pre><code class="language-mongodb">db.teachers.find({ dname: { $in: ["Computer", "IT", "E&#x26;TC"] }, salary: { $gte: 10000 } })
+</code></pre>
+<ol start="5">
+<li>Find the student information having roll_no = 2 or Sname = "xyz":</li>
+</ol>
+<pre><code class="language-mongodb">db.students.find({ $or: [{ roll_no: 2 }, { Sname: "xyz" }] })
+</code></pre>
+<ol start="6">
+<li>Update the experience of teacher "praveen" to 10 years, if the entry is not available in the database, consider the entry as a new entry:</li>
+</ol>
+<pre><code class="language-mongodb">db.teachers.updateOne({ Tname: "praveen" }, { $set: { experience: 10 } }, { upsert: true })
+</code></pre>
+<ol start="7">
+<li>Update the department of all the teachers working in the IT department to "COMP":</li>
+</ol>
+<pre><code class="language-mongodb">db.teachers.updateMany({ dname: "IT" }, { $set: { dname: "COMP" } })
+</code></pre>
+<ol start="8">
+<li>Find the teachers' name and their experience from the teachers collection:</li>
+</ol>
+<pre><code class="language-mongodb">db.teachers.find({}, { Tname: 1, experience: 1 })
+</code></pre>
+<ol start="9">
+<li>Using the <code>save()</code> method, insert one entry in the department collection:</li>
+</ol>
+<pre><code class="language-mongodb">db.department.save({ dno: 1, dname: "Computer" })
+</code></pre>
+<ol start="10">
+<li>Using the <code>save()</code> method, change the department of teacher "praveen" to "IT":</li>
+</ol>
+<pre><code class="language-mongodb">db.teachers.save({ Tname: "praveen", dname: "IT" })
+</code></pre>
+<ol start="11">
+<li>Delete all the documents from the teachers collection having the IT department:</li>
+</ol>
+<pre><code class="language-mongodb">db.teachers.deleteMany({ dname: "IT" })
+</code></pre>
+<ol start="12">
+<li>Display the first 3 documents in the teachers collection in ascending order using the <code>pretty()</code> method:</li>
+</ol>
+<pre><code class="language-mongodb">db.teachers.find({}).sort({ _id: 1 }).limit(3).pretty()
+</code></pre>
+<p>Note: Replace <code>teachers</code> and <code>students</code> with the actual collection names in your MongoDB database. Adjust the field names and values as per your data structure.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 16.
+Consider each document in the zipcode collection has the following form:
+{
+&quot;_id&quot;: &quot;10280&quot;,
+&quot;city&quot;: &quot;NEW YORK&quot;,
+&quot;state&quot;: &quot;NY&quot;,
+&quot;pop&quot;: 5574,
+}1. Return States with Populations above 10 Million
+2. Display the department wise average salary
+3. Display the no. Of employees working in each department
+4. Display the department wise total salary of departments having total salary greater than or equals to 50000/-
+5. Write the queries using the different operators like max, min. Etc.
+6. Create the simple index on roll_no field
+7. create unique index on any field for above given collections
+8. create compound index on any fields for above given collections
+9. Show all the indexes created in the database PCCOE
+10. Show all the indexes created in above collections.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To solve the given queries, assuming you are using MongoDB as the database management system, here are the corresponding MongoDB queries:</p>
+<ol>
+<li>Return states with populations above 10 million:</li>
+</ol>
+<pre><code class="language-mongodb">db.zipcode.find({ pop: { $gt: 10000000 } }, { state: 1 })
+</code></pre>
+<ol start="2">
+<li>Display the department-wise average salary:</li>
+</ol>
+<pre><code class="language-mongodb">db.employees.aggregate([
+  { $group: { _id: "$department", avgSalary: { $avg: "$salary" } } }
+])
+</code></pre>
+<ol start="3">
+<li>Display the number of employees working in each department:</li>
+</ol>
+<pre><code class="language-mongodb">db.employees.aggregate([
+  { $group: { _id: "$department", count: { $sum: 1 } } }
+])
+</code></pre>
+<ol start="4">
+<li>Display the department-wise total salary of departments having a total salary greater than or equal to 50000/-:</li>
+</ol>
+<pre><code class="language-mongodb">db.employees.aggregate([
+  { $group: { _id: "$department", totalSalary: { $sum: "$salary" } } },
+  { $match: { totalSalary: { $gte: 50000 } } }
+])
+</code></pre>
+<ol start="5">
+<li>Write queries using different operators like max, min, etc.:</li>
+</ol>
+<pre><code class="language-mongodb">// Maximum population
+db.zipcode.aggregate([
+  { $group: { _id: null, maxPop: { $max: "$pop" } } }
+])
+
+// Minimum population
+db.zipcode.aggregate([
+  { $group: { _id: null, minPop: { $min: "$pop" } } }
+])
+</code></pre>
+<ol start="6">
+<li>Create a simple index on the roll_no field:</li>
+</ol>
+<pre><code class="language-mongodb">db.collection.createIndex({ roll_no: 1 })
+</code></pre>
+<ol start="7">
+<li>Create a unique index on any field for the given collections:</li>
+</ol>
+<pre><code class="language-mongodb">db.collection.createIndex({ field_name: 1 }, { unique: true })
+</code></pre>
+<ol start="8">
+<li>Create a compound index on any fields for the given collections:</li>
+</ol>
+<pre><code class="language-mongodb">db.collection.createIndex({ field1: 1, field2: -1 })
+</code></pre>
+<ol start="9">
+<li>Show all the indexes created in the PCCOE database:</li>
+</ol>
+<pre><code class="language-mongodb">db.getCollectionNames().forEach(function(collection) {
+   indexes = db.getCollection(collection).getIndexes();
+   print("Indexes for collection " + collection + ":");
+   printjson(indexes);
+   print("--------------------");
+});
+</code></pre>
+<ol start="10">
+<li>Show all the indexes created in the above collections:</li>
+</ol>
+<pre><code class="language-mongodb">db.collection.getIndexes()
+</code></pre>
+<p>Note: Replace <code>zipcode</code> and <code>employees</code> with the actual collection names in your MongoDB database. Adjust the field names and values as per your data structure.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 17.
+Q 1. Using Map-Reduce function comply the following requirements
+1. Display the salary of employees department wise
+2. Display the count of employees department wise
+3. Consider the collection “Orders “ with the following types of documents
+{
+_id: ObjectId(&quot;50a8240b927d5d8b5891743c&quot;),
+cust_id: &quot;abc123&quot;,
+status: &#039;A&#039;,
+price: 25,
+}
+Return the Total Price Per Customer
+4. Display the total salatry of employees working in computer department.
+5. Consider each document in the zipcode collection has the following form:
+{
+&quot;_id&quot;: &quot;10280&quot;,
+&quot;city&quot;: &quot;NEW YORK&quot;,
+&quot;state&quot;: &quot;NY&quot;,
+&quot;pop&quot;: 5574,
+}
+Return the city wise population of the cities in the NY state.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To solve the given requirements using the Map-Reduce function in MongoDB, here are the corresponding Map-Reduce functions:</p>
+<ol>
+<li>Display the salary of employees department-wise:</li>
+</ol>
+<pre><code class="language-mongodb">var mapFunction = function() {
+  emit(this.department, this.salary);
+};
+
+var reduceFunction = function(key, values) {
+  return Array.sum(values);
+};
+
+db.employees.mapReduce(mapFunction, reduceFunction, { out: "department_salaries" });
+db.department_salaries.find();
+</code></pre>
+<ol start="2">
+<li>Display the count of employees department-wise:</li>
+</ol>
+<pre><code class="language-mongodb">var mapFunction = function() {
+  emit(this.department, 1);
+};
+
+var reduceFunction = function(key, values) {
+  return Array.sum(values);
+};
+
+db.employees.mapReduce(mapFunction, reduceFunction, { out: "department_employee_count" });
+db.department_employee_count.find();
+</code></pre>
+<ol start="3">
+<li>Return the total price per customer:</li>
+</ol>
+<pre><code class="language-mongodb">var mapFunction = function() {
+  emit(this.cust_id, this.price);
+};
+
+var reduceFunction = function(key, values) {
+  return Array.sum(values);
+};
+
+db.orders.mapReduce(mapFunction, reduceFunction, { out: "total_price_per_customer" });
+db.total_price_per_customer.find();
+</code></pre>
+<ol start="4">
+<li>Display the total salary of employees working in the computer department:</li>
+</ol>
+<pre><code class="language-mongodb">var mapFunction = function() {
+  if (this.department === "computer") {
+    emit("total_salary", this.salary);
+  }
+};
+
+var reduceFunction = function(key, values) {
+  return Array.sum(values);
+};
+
+db.employees.mapReduce(mapFunction, reduceFunction, { out: "computer_department_total_salary" });
+db.computer_department_total_salary.find();
+</code></pre>
+<ol start="5">
+<li>Return the city-wise population of cities in the NY state:</li>
+</ol>
+<pre><code class="language-mongodb">var mapFunction = function() {
+  if (this.state === "NY") {
+    emit(this.city, this.pop);
+  }
+};
+
+var reduceFunction = function(key, values) {
+  return Array.sum(values);
+};
+
+db.zipcode.mapReduce(mapFunction, reduceFunction, { out: "ny_city_population" });
+db.ny_city_population.find();
+</code></pre>
+<p>Note: Replace <code>employees</code>, <code>orders</code>, and <code>zipcode</code> with the actual collection names in your MongoDB database. Adjust the field names and values as per your data structure.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 18.
+Implement Mysql database connectivity with Java Implement Database navigation operations (add, delete, edit,) using JDBC</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To implement MySQL database connectivity with Java and perform database navigation operations (add, delete, edit) using JDBC, you can follow the steps below:</p>
+<ol>
+<li>Import the necessary JDBC classes and packages:</li>
+</ol>
+<pre><code class="language-java">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+</code></pre>
+<ol start="2">
+<li>Establish a connection to the MySQL database:</li>
+</ol>
+<pre><code class="language-java">String url = "jdbc:mysql://localhost:3306/database_name";
+String username = "your_username";
+String password = "your_password";
+
+try {
+    Connection connection = DriverManager.getConnection(url, username, password);
+    // Perform database operations
+    connection.close(); // Close the connection
+} catch (SQLException e) {
+    e.printStackTrace();
+}
+</code></pre>
+<p>Replace <code>database_name</code>, <code>your_username</code>, and <code>your_password</code> with your MySQL database name, username, and password, respectively.</p>
+<ol start="3">
+<li>Perform database navigation operations:
+You can use the <code>Statement</code> class to execute SQL queries and statements.</li>
+</ol>
+<p>Example: Adding a record to a table:</p>
+<pre><code class="language-java">String insertQuery = "INSERT INTO table_name (column1, column2) VALUES ('value1', 'value2')";
+
+try {
+    Statement statement = connection.createStatement();
+    int rowsAffected = statement.executeUpdate(insertQuery);
+    System.out.println(rowsAffected + " record(s) added successfully.");
+} catch (SQLException e) {
+    e.printStackTrace();
+}
+</code></pre>
+<p>Replace <code>table_name</code>, <code>column1</code>, <code>column2</code>, 'value1', and 'value2' with the appropriate table name, column names, and values you want to insert.</p>
+<p>Similarly, you can use the <code>UPDATE</code> and <code>DELETE</code> queries to edit and delete records from the database.</p>
+<p>Remember to handle exceptions appropriately and close the connection after performing the required operations.</p>
+<p>Note: Make sure to have the MySQL JDBC driver (e.g., <code>mysql-connector-java.jar</code>) included in your project's dependencies.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statement 19.
+Write a program to implement MogoDB database connectivity with Java.
+Implement Database navigation operations (add, delete, edit etc. ) using JDBC.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To implement MongoDB database connectivity with Java and perform database navigation operations (add, delete, edit, etc.) using the MongoDB Java driver, you can follow the steps below:</p>
+<ol>
+<li>
+<p>Add the MongoDB Java driver dependency to your project:
+Include the MongoDB Java driver in your project's dependencies. You can download the driver JAR file from the MongoDB official website or use a build tool like Maven or Gradle to manage the dependencies.</p>
+</li>
+<li>
+<p>Import the necessary MongoDB classes and packages:</p>
+</li>
+</ol>
+<pre><code class="language-java">import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+import com.mongodb.client.model.Filters;
+</code></pre>
+<ol start="3">
+<li>Establish a connection to the MongoDB server:</li>
+</ol>
+<pre><code class="language-java">String connectionString = "mongodb://localhost:27017";
+MongoClient mongoClient = MongoClients.create(connectionString);
+MongoDatabase database = mongoClient.getDatabase("your_database_name");
+</code></pre>
+<p>Replace <code>your_database_name</code> with the name of your MongoDB database.</p>
+<ol start="4">
+<li>Perform database navigation operations:
+You can use the <code>MongoCollection</code> class to interact with a specific collection in the database.</li>
+</ol>
+<p>Example: Adding a document to a collection:</p>
+<pre><code class="language-java">MongoCollection&#x3C;Document> collection = database.getCollection("your_collection_name");
+Document document = new Document("field1", "value1")
+                        .append("field2", "value2")
+                        .append("field3", "value3");
+collection.insertOne(document);
+System.out.println("Document added successfully.");
+</code></pre>
+<p>Replace <code>your_collection_name</code> with the name of the collection where you want to add the document. Also, adjust the field names and values accordingly.</p>
+<p>Similarly, you can use the <code>deleteOne()</code> and <code>updateOne()</code> methods to delete and update documents in the collection.</p>
+<p>Example: Deleting a document from a collection:</p>
+<pre><code class="language-java">MongoCollection&#x3C;Document> collection = database.getCollection("your_collection_name");
+collection.deleteOne(Filters.eq("field1", "value1"));
+System.out.println("Document deleted successfully.");
+</code></pre>
+<p>Replace <code>your_collection_name</code>, <code>field1</code>, and <code>value1</code> with the appropriate collection name, field name, and value for the document you want to delete.</p>
+<p>Remember to handle exceptions appropriately and close the MongoDB client after performing the required operations.</p>
+<p>Note: Make sure to have the MongoDB Java driver (e.g., <code>mongodb-driver-sync-x.x.x.jar</code>) included in your project's dependencies.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statements 20
+Consider the relational database
+Supplier(Sid,Sname,address)
+Parts(Pid, Pname, Color)
+Catalog(sid,pid,cost)
+Q. Find name of all parts whose color is green.
+Q. Find names of suppliers who supply some red parts.
+Q. Find names of all parts whose cost is more than Rs25.
+Consider the relational database
+Person(pname,street city)
+Company(cname,city)
+Manages(pname,mname)
+Q. Find the street and city of all employees who work for “Idea”, live in Pune and earn more than 3000.
+Consider the relational database
+Student(Rollno,name,address)
+Subject(sub_code,sub_name)
+Marks(Rollno,sub_code, marks)
+Q. Find out average marks of each student along with the name of student.
+Q. Find how many students have failed in the subject “DBMS”</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>For the given problem statements, you can use SQL queries to retrieve the desired information from the relational database. Here are the queries for each problem statement:</p>
+<ol>
+<li>Find name of all parts whose color is green.</li>
+</ol>
+<pre><code class="language-sql">SELECT Pname
+FROM Parts
+WHERE Color = 'green';
+</code></pre>
+<ol start="2">
+<li>Find names of suppliers who supply some red parts.</li>
+</ol>
+<pre><code class="language-sql">SELECT Sname
+FROM Supplier
+WHERE Sid IN (
+    SELECT Sid
+    FROM Catalog
+    WHERE Pid IN (
+        SELECT Pid
+        FROM Parts
+        WHERE Color = 'red'
+    )
+);
+</code></pre>
+<ol start="3">
+<li>Find names of all parts whose cost is more than Rs25.</li>
+</ol>
+<pre><code class="language-sql">SELECT Pname
+FROM Parts
+WHERE Pid IN (
+    SELECT Pid
+    FROM Catalog
+    WHERE cost > 25
+);
+</code></pre>
+<ol start="4">
+<li>Find the street and city of all employees who work for "Idea", live in Pune, and earn more than 3000.</li>
+</ol>
+<pre><code class="language-sql">SELECT street, city
+FROM Person
+WHERE pname IN (
+    SELECT pname
+    FROM Manages
+    WHERE mname = 'Idea'
+) AND city = 'Pune'
+AND pname IN (
+    SELECT pname
+    FROM Manages
+    WHERE mname IN (
+        SELECT cname
+        FROM Company
+    )
+) AND pname IN (
+    SELECT pname
+    FROM Manages
+    WHERE pname IN (
+        SELECT pname
+        FROM Salary
+        WHERE salary > 3000
+    )
+);
+</code></pre>
+<ol start="5">
+<li>Find out the average marks of each student along with the name of the student.</li>
+</ol>
+<pre><code class="language-sql">SELECT Student.name, AVG(Marks.marks) AS average_marks
+FROM Student
+JOIN Marks ON Student.Rollno = Marks.Rollno
+GROUP BY Student.name;
+</code></pre>
+<ol start="6">
+<li>Find how many students have failed in the subject "DBMS".</li>
+</ol>
+<pre><code class="language-sql">SELECT COUNT(*) AS num_failed_students
+FROM Marks
+WHERE sub_code = 'DBMS' AND marks &#x3C; 40;
+</code></pre>
+<p>Please note that these queries assume the presence of the necessary tables and relationships in the database schema. Adjust the table and column names as per your database schema.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statements 21
+Write Pl/SQL code block that will accept account number from user , check if the users balance is less than the minimum balance , only deduct Rs.100/- from the balance .</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Here is a PL/SQL code block that accepts an account number from the user, checks if the user's balance is less than the minimum balance, and deducts Rs.100/- from the balance if necessary:</p>
+<pre><code class="language-sql">DECLARE
+  account_number NUMBER;
+  balance NUMBER;
+  minimum_balance NUMBER := 1000; -- Assuming minimum balance is Rs.1000/-
+BEGIN
+  -- Accept account number from user
+  account_number := &#x26;account_number;
+
+  -- Get the balance of the account
+  SELECT balance INTO balance
+  FROM accounts
+  WHERE account_number = account_number;
+
+  -- Check if the balance is less than the minimum balance
+  IF balance &#x3C; minimum_balance THEN
+    -- Deduct Rs.100/- from the balance
+    balance := balance - 100;
+
+    -- Update the balance in the accounts table
+    UPDATE accounts
+    SET balance = balance - 100
+    WHERE account_number = account_number;
+
+    -- Display the updated balance
+    DBMS_OUTPUT.PUT_LINE('Balance updated. New balance: ' || balance);
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Balance is not less than the minimum balance. No deduction required.');
+  END IF;
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('Account not found.');
+END;
+/
+</code></pre>
+<p>Note: Make sure to replace <code>accounts</code> with the actual table name that holds the account information in your database. Also, adjust the minimum balance value as per your requirements.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statements 22
+Write Pl/SQL code block for inverting number 1234 to 4321.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To invert a number in PL/SQL, you can use the following code block:</p>
+<pre><code class="language-sql">DECLARE
+  num NUMBER := 1234; -- Number to be inverted
+  inverted_num NUMBER := 0;
+  remainder NUMBER;
+BEGIN
+  WHILE num > 0 LOOP
+    remainder := num MOD 10; -- Get the rightmost digit
+    inverted_num := (inverted_num * 10) + remainder; -- Add the digit to the inverted number
+    num := num / 10; -- Remove the rightmost digit
+  END LOOP;
+  
+  DBMS_OUTPUT.PUT_LINE('Inverted Number: ' || inverted_num);
+END;
+/
+</code></pre>
+<p>This code block uses a <code>WHILE</code> loop to extract the rightmost digit from the original number and adds it to the inverted number. It repeats this process until all digits are processed. The final inverted number is displayed using <code>DBMS_OUTPUT.PUT_LINE</code>.</p>
+<p>When you run the code block, it will output the inverted number as "4321" for the initial value of "1234".</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statements 23
+The bank manager has decided to mark all those accounts as inactive (I) on which there are no transactions performed in last 365 days. Whenever any such update takes place a record for the same is maintained in the INACT_MASTER_TABLE comprising of the account number, the opening date and type of account. Write PL/SQL code block to do the same(cursor for loop)</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To mark accounts as inactive and maintain a record in the INACT_MASTER_TABLE for accounts with no transactions in the last 365 days, you can use the following PL/SQL code block using a cursor for loop:</p>
+<pre><code class="language-sql">DECLARE
+  CURSOR c_accounts IS
+    SELECT account_number, opening_date, account_type
+    FROM accounts
+    WHERE last_transaction_date &#x3C;= SYSDATE - 365; -- Assuming last_transaction_date is a column in the accounts table
+    
+  v_account_number accounts.account_number%TYPE;
+  v_opening_date accounts.opening_date%TYPE;
+  v_account_type accounts.account_type%TYPE;
+BEGIN
+  FOR rec IN c_accounts LOOP
+    -- Store the account details in the INACT_MASTER_TABLE
+    INSERT INTO INACT_MASTER_TABLE(account_number, opening_date, account_type)
+    VALUES (rec.account_number, rec.opening_date, rec.account_type);
+    
+    -- Mark the account as inactive (update the status to 'I')
+    UPDATE accounts
+    SET status = 'I'
+    WHERE account_number = rec.account_number;
+  END LOOP;
+  
+  DBMS_OUTPUT.PUT_LINE('Inactive accounts marked successfully.');
+END;
+/
+</code></pre>
+<p>This code block uses a cursor for loop to iterate over the accounts that have no transactions in the last 365 days. For each account, it inserts a record into the INACT_MASTER_TABLE and updates the account's status to 'I' in the accounts table.</p>
+<p>Note: Please make sure to replace the table and column names (<code>accounts</code>, <code>INACT_MASTER_TABLE</code>, <code>account_number</code>, <code>opening_date</code>, <code>account_type</code>, <code>status</code>, <code>last_transaction_date</code>) with the actual names used in your database schema.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statements 24
+Write PL/SQL code block that will merge the data available in the newly created table NEW_BRANCHES with the data available in the table BRANCH_MASTER. If the data in the first table already exists in the second table then data should be skipped.(parameterized cursor)</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To merge the data from the table NEW_BRANCHES into the table BRANCH_MASTER, skipping the data that already exists, you can use the following PL/SQL code block with a parameterized cursor:</p>
+<pre><code class="language-sql">DECLARE
+  CURSOR c_new_branches IS
+    SELECT *
+    FROM NEW_BRANCHES;
+    
+  v_branch_id NEW_BRANCHES.branch_id%TYPE;
+  v_branch_name NEW_BRANCHES.branch_name%TYPE;
+  v_branch_location NEW_BRANCHES.branch_location%TYPE;
+BEGIN
+  FOR rec IN c_new_branches LOOP
+    -- Check if the data already exists in BRANCH_MASTER
+    SELECT COUNT(*)
+    INTO v_branch_id
+    FROM BRANCH_MASTER
+    WHERE branch_id = rec.branch_id;
+    
+    -- If the data does not exist, then insert it into BRANCH_MASTER
+    IF v_branch_id = 0 THEN
+      INSERT INTO BRANCH_MASTER(branch_id, branch_name, branch_location)
+      VALUES (rec.branch_id, rec.branch_name, rec.branch_location);
+    END IF;
+  END LOOP;
+  
+  DBMS_OUTPUT.PUT_LINE('Data merged successfully.');
+END;
+/
+</code></pre>
+<p>This code block uses a parameterized cursor <code>c_new_branches</code> to iterate over the data in the NEW_BRANCHES table. For each record, it checks if the corresponding branch_id already exists in the BRANCH_MASTER table. If the branch_id does not exist, it inserts the data from the NEW_BRANCHES table into the BRANCH_MASTER table.</p>
+<p>Note: Please make sure to replace the table and column names (<code>NEW_BRANCHES</code>, <code>BRANCH_MASTER</code>, <code>branch_id</code>, <code>branch_name</code>, <code>branch_location</code>) with the actual names used in your database schema.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statements 25
+Write PL/SQL code block such that depending upon user supplied account number, the customer to whom account belongs , the introducer of that account are inserted into ACCOUNT_MASTER_INFO table .If the user enters an account number that is not in the ACCOUNT_MASTER table, then the PL/SQL block must display appropriate error message(Exception Handling)</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To implement the functionality described, you can use the following PL/SQL code block with exception handling:</p>
+<pre><code class="language-sql">DECLARE
+  v_account_number ACCOUNT_MASTER.account_number%TYPE := '&#x26;enter_account_number';
+  v_customer_name ACCOUNT_MASTER.customer_name%TYPE;
+  v_introducer ACCOUNT_MASTER.introducer%TYPE;
+BEGIN
+  -- Retrieve the customer name and introducer based on the supplied account number
+  SELECT customer_name, introducer
+  INTO v_customer_name, v_introducer
+  FROM ACCOUNT_MASTER
+  WHERE account_number = v_account_number;
+  
+  -- Insert the customer and introducer into ACCOUNT_MASTER_INFO table
+  INSERT INTO ACCOUNT_MASTER_INFO(account_number, customer_name, introducer)
+  VALUES (v_account_number, v_customer_name, v_introducer);
+  
+  DBMS_OUTPUT.PUT_LINE('Data inserted successfully.');
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('Invalid account number. Please enter a valid account number.');
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>In this code block, the user is prompted to enter an account number using the <code>&#x26;enter_account_number</code> substitution variable. The account number is then used to retrieve the corresponding customer name and introducer from the ACCOUNT_MASTER table. If the account number is not found (<code>NO_DATA_FOUND</code> exception), an appropriate error message is displayed. If any other error occurs during the execution, the error message is also displayed.</p>
+<p>Finally, if the account number is valid, the customer name and introducer are inserted into the ACCOUNT_MASTER_INFO table.</p>
+<p>Please make sure to replace the table and column names (<code>ACCOUNT_MASTER</code>, <code>ACCOUNT_MASTER_INFO</code>, <code>account_number</code>, <code>customer_name</code>, <code>introducer</code>) with the actual names used in your database schema.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statements 26
+A stored function is created to perform the ACCOUNT_NO check operation .F_checkAccNO() is the name of function which accept a variable ACCOUNT_NO and returns the value to host environment The value changes from 0(if ACCOUNT_NO does not exist) to 1(if ACCOUNT_NO exist) depending on the records retrieved.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To implement the stored function <code>F_checkAccNO</code> that checks the existence of an account number, you can use the following PL/SQL code:</p>
+<pre><code class="language-sql">CREATE OR REPLACE FUNCTION F_checkAccNO(p_account_no IN NUMBER) RETURN NUMBER IS
+  v_count NUMBER := 0;
+BEGIN
+  SELECT COUNT(*) INTO v_count
+  FROM ACCOUNT_MASTER
+  WHERE account_number = p_account_no;
+  
+  IF v_count > 0 THEN
+    RETURN 1; -- Account number exists
+  ELSE
+    RETURN 0; -- Account number does not exist
+  END IF;
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN 0; -- Error occurred, treat as non-existent account number
+END;
+/
+</code></pre>
+<p>In this code, the function <code>F_checkAccNO</code> accepts an account number <code>p_account_no</code> as a parameter and returns a value indicating the existence of the account number.</p>
+<p>The function queries the <code>ACCOUNT_MASTER</code> table to count the number of records matching the supplied account number. If the count is greater than 0, it means the account number exists, and the function returns 1. Otherwise, if the count is 0 or an error occurs during the execution, the function returns 0.</p>
+<p>You can call the function in a PL/SQL block or use it in SQL queries to perform the account number check operation.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statements 27
+create a row level trigger for the CUSTOMERS table that would fire for INSERT or UPDATE or DELETE operations performed on the CUSTOMERS table. This trigger will display the salary difference between the old values and new values</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To create a row-level trigger for the <code>CUSTOMERS</code> table that displays the salary difference between old and new values during INSERT, UPDATE, or DELETE operations, you can use the following PL/SQL code:</p>
+<pre><code class="language-sql">CREATE OR REPLACE TRIGGER trg_salary_difference
+BEFORE INSERT OR UPDATE OR DELETE ON CUSTOMERS
+FOR EACH ROW
+DECLARE
+  v_salary_diff NUMBER;
+BEGIN
+  IF INSERTING OR UPDATING THEN
+    v_salary_diff := :NEW.salary - :OLD.salary;
+  ELSIF DELETING THEN
+    v_salary_diff := :OLD.salary;
+  END IF;
+  
+  DBMS_OUTPUT.PUT_LINE('Salary Difference: ' || v_salary_diff);
+END;
+/
+</code></pre>
+<p>In this code, the trigger <code>trg_salary_difference</code> is created for the <code>CUSTOMERS</code> table. It is set to fire before each row-level INSERT, UPDATE, or DELETE operation (<code>BEFORE INSERT OR UPDATE OR DELETE ON CUSTOMERS FOR EACH ROW</code>).</p>
+<p>Within the trigger body, the <code>v_salary_diff</code> variable is declared to store the salary difference between the old and new values.</p>
+<p>If it's an INSERT or UPDATE operation, the salary difference is calculated by subtracting the old salary (<code>:OLD.salary</code>) from the new salary (<code>:NEW.salary</code>).
+If it's a DELETE operation, the salary difference is set to the old salary value (<code>:OLD.salary</code>).</p>
+<p>Finally, the salary difference is displayed using <code>DBMS_OUTPUT.PUT_LINE</code> statement.</p>
+<p>Remember to enable the <code>DBMS_OUTPUT</code> to see the output in your environment.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statements 28
+Write PL/SQL block to update the Customer table and increase the salary of each customer by 500 and use the SQL%ROWCOUNTattribute to determine the number of rows affected.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To update the <code>Customer</code> table and increase the salary of each customer by 500, you can use the following PL/SQL block. The <code>SQL%ROWCOUNT</code> attribute is used to determine the number of rows affected by the update operation:</p>
+<pre><code class="language-sql">DECLARE
+  v_num_rows NUMBER;
+BEGIN
+  -- Increase the salary of each customer by 500
+  UPDATE Customer
+  SET salary = salary + 500;
+
+  -- Get the number of rows affected
+  v_num_rows := SQL%ROWCOUNT;
+
+  -- Display the number of rows affected
+  DBMS_OUTPUT.PUT_LINE('Number of rows updated: ' || v_num_rows);
+END;
+/
+</code></pre>
+<p>In this PL/SQL block, the <code>UPDATE</code> statement is used to increase the salary of each customer in the <code>Customer</code> table by 500 (<code>SET salary = salary + 500</code>).</p>
+<p>After the update operation, the <code>SQL%ROWCOUNT</code> attribute is assigned to the variable <code>v_num_rows</code>, which represents the number of rows affected by the update statement.</p>
+<p>Finally, the number of rows updated is displayed using the <code>DBMS_OUTPUT.PUT_LINE</code> statement. Make sure to enable <code>DBMS_OUTPUT</code> to see the output in your environment.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statements 29 Let’s consider the product table and order_items table from sql joins.Here product_id is a primary key in product table and a foreign key in order_items table. If user try to delete a product_id from the product table when it has child records in order_id table an exception will be thrown with oracle code number -2292.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To handle the situation where a user tries to delete a <code>product_id</code> from the <code>product</code> table when it has child records in the <code>order_items</code> table, you can use exception handling in PL/SQL. Specifically, you can catch the <code>ORA-02292</code> exception, which is raised when a foreign key constraint violation occurs.</p>
+<p>Here's an example PL/SQL block that demonstrates how to handle the exception and display a custom error message:</p>
+<pre><code class="language-sql">DECLARE
+  v_product_id product.product_id%TYPE := 123; -- Replace with the actual product_id to be deleted
+  v_exception_code NUMBER;
+  v_exception_msg VARCHAR2(100);
+BEGIN
+  -- Attempt to delete the product record
+  DELETE FROM product WHERE product_id = v_product_id;
+
+  -- If the deletion is successful, commit the transaction
+  COMMIT;
+
+  -- If the deletion is unsuccessful due to foreign key constraint, handle the exception
+EXCEPTION
+  WHEN OTHERS THEN
+    v_exception_code := SQLCODE;
+    v_exception_msg := SQLERRM;
+
+    -- If the exception code is -2292 (foreign key constraint violation)
+    IF v_exception_code = -2292 THEN
+      DBMS_OUTPUT.PUT_LINE('Error: Cannot delete product with product_id ' || v_product_id || ' as it has child records in order_items table.');
+    ELSE
+      -- For other exceptions, display the default error message
+      DBMS_OUTPUT.PUT_LINE('Error: ' || v_exception_msg);
+    END IF;
+END;
+/
+</code></pre>
+<p>In this PL/SQL block, the <code>DELETE</code> statement is used to attempt to delete the product record with the specified <code>product_id</code> from the <code>product</code> table. If the deletion is successful, the transaction is committed.</p>
+<p>If the deletion encounters a foreign key constraint violation (ORA-02292 exception), the exception is caught using the <code>WHEN OTHERS</code> exception handler. The <code>SQLCODE</code> function is used to retrieve the exception code, and the <code>SQLERRM</code> function is used to retrieve the exception message.</p>
+<p>If the exception code is -2292 (foreign key constraint violation), a custom error message is displayed using the <code>DBMS_OUTPUT.PUT_LINE</code> statement. Otherwise, for other exceptions, the default error message is displayed.</p>
+<p>Please note that you need to replace <code>v_product_id</code> with the actual product_id value you want to delete in the PL/SQL block.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>Problem statements 30 Let’s consider the product table and order_items table from sql joins to explain user-defined exception. Let’s create a business rule that if the total no of units of any particular product sold is more than 20, then it is a huge quantity and a special discount should be provided.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To implement the business rule that provides a special discount for products sold in a huge quantity, you can use user-defined exceptions in PL/SQL. Here's an example code block that demonstrates how to achieve this:</p>
+<pre><code class="language-sql">DECLARE
+  v_product_id order_items.product_id%TYPE := 123; -- Replace with the actual product_id
+  v_total_units_sold NUMBER;
+  
+  -- Define a user-defined exception for huge quantity
+  huge_quantity_exception EXCEPTION;
+  PRAGMA EXCEPTION_INIT(huge_quantity_exception, -20001); -- Assign a custom error code to the exception
+  
+BEGIN
+  -- Retrieve the total units sold for the specific product
+  SELECT SUM(units_sold)
+    INTO v_total_units_sold
+    FROM order_items
+    WHERE product_id = v_product_id;
+
+  -- Check if the total units sold is more than 20
+  IF v_total_units_sold > 20 THEN
+    -- Raise the user-defined exception if the condition is met
+    RAISE huge_quantity_exception;
+  ELSE
+    -- Apply normal pricing if the condition is not met
+    DBMS_OUTPUT.PUT_LINE('No special discount is provided.');
+  END IF;
+
+EXCEPTION
+  WHEN huge_quantity_exception THEN
+    -- Handle the user-defined exception and provide the special discount
+    DBMS_OUTPUT.PUT_LINE('Special discount provided for huge quantity!');
+    -- Apply the special discount logic here
+  
+  WHEN OTHERS THEN
+    -- Handle other exceptions
+    DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+END;
+/
+</code></pre>
+<p>In this example, we declare a user-defined exception called <code>huge_quantity_exception</code> and assign a custom error code <code>-20001</code> to it using the <code>PRAGMA EXCEPTION_INIT</code> statement.</p>
+<p>Inside the PL/SQL block, we retrieve the total units sold for a specific product from the <code>order_items</code> table. Then, we check if the total units sold is greater than 20. If it is, we raise the <code>huge_quantity_exception</code> to indicate that a huge quantity has been sold.</p>
+<p>In the <code>EXCEPTION</code> section, we handle the <code>huge_quantity_exception</code> separately and provide the special discount logic. For other exceptions, we handle them using the <code>WHEN OTHERS</code> exception handler and display the error message.</p>
+<p>Please note that you need to replace <code>v_product_id</code> with the actual product_id value you want to check in the PL/SQL block. Additionally, you should implement the logic for applying the special discount inside the <code>huge_quantity_exception</code> handler as per your business requirements.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>how can i run pl sql in sql plus or oracle live</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To run PL/SQL code in SQL*Plus or Oracle Live SQL, you can follow these steps:</p>
+<ol>
+<li>
+<p>Open a text editor and write your PL/SQL code.</p>
+</li>
+<li>
+<p>Save the file with a <code>.sql</code> extension (e.g., <code>myscript.sql</code>).</p>
+</li>
+<li>
+<p>Open SQL*Plus or Oracle Live SQL in a terminal or web browser.</p>
+</li>
+<li>
+<p>Connect to your Oracle database by entering your username, password, and database details. For example, in SQL*Plus, you can use the following command:</p>
+</li>
+</ol>
+<pre><code>CONNECT username/password@database
+</code></pre>
+<ol start="5">
+<li>Once connected, use the <code>@</code> command to run the PL/SQL script. Provide the file path and name of the script as an argument. For example:</li>
+</ol>
+<pre><code>@C:\path\to\myscript.sql
+</code></pre>
+<p>or</p>
+<pre><code>@myscript.sql
+</code></pre>
+<ol start="6">
+<li>Press Enter to execute the script. The PL/SQL code will be executed, and the output (if any) will be displayed on the screen.</li>
+</ol>
+<p>Make sure you have the necessary privileges to execute the PL/SQL code and that your Oracle database is running properly.</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author user">
+        <img alt="You" />
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>how to run in sql plus of oracle database</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="conversation-item">
+    <div class="author GPT-3">
+        <svg width="41" height="41"><use xlink:href="#chatgpt" /></svg>
+    </div>
+    <div class="conversation-content-wrapper">
+        <div class="conversation-content">
+            <p>To run PL/SQL code in SQL*Plus, you can follow these steps:</p>
+<ol>
+<li>
+<p>Open a text editor and write your PL/SQL code.</p>
+</li>
+<li>
+<p>Save the file with a <code>.sql</code> extension (e.g., <code>myscript.sql</code>).</p>
+</li>
+<li>
+<p>Open SQL*Plus in a terminal or command prompt.</p>
+</li>
+<li>
+<p>Connect to your Oracle database by entering your username, password, and database details. For example:</p>
+</li>
+</ol>
+<pre><code>SQLPLUS username/password@database
+</code></pre>
+<ol start="5">
+<li>Once connected, use the <code>@</code> command to run the PL/SQL script. Provide the file path and name of the script as an argument. For example:</li>
+</ol>
+<pre><code>@C:\path\to\myscript.sql
+</code></pre>
+<p>or</p>
+<pre><code>@myscript.sql
+</code></pre>
+<ol start="6">
+<li>Press Enter to execute the script. The PL/SQL code will be executed, and the output (if any) will be displayed on the screen.</li>
+</ol>
+<p>Make sure you have the necessary privileges to execute the PL/SQL code and that your Oracle database is running properly.</p>
+        </div>
+    </div>
+    
+</div>
+    </div>
+
+
+    <script>
+        function toggleDarkMode(mode) {
+            const html = document.querySelector('html')
+            const isDarkMode = html.getAttribute('data-theme') === 'dark'
+            const newMode = mode || (isDarkMode ? 'light' : 'dark')
+            if (newMode !== 'dark' && newMode !== 'light') return
+            html.setAttribute('data-theme', newMode)
+
+            const url = new URL(window.location)
+            url.searchParams.set('theme', newMode)
+            window.history.replaceState({}, '', url)
+        }
+
+        // Support for ?theme=dark
+        const urlParams = new URLSearchParams(window.location.search)
+        const theme = urlParams.get('theme')
+        if (theme) toggleDarkMode(theme)
+
+        document.querySelector('.toggle').addEventListener('click', () => toggleDarkMode())
+    </script>
+</body>
+
+</html>
